@@ -1,3 +1,9 @@
 [submodule "gohugo-theme-ananke"]
 	path = gohugo-theme-ananke
 	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
+[submodule "themes/uBlogger"]
+	path = themes/uBlogger
+	url = git@github.com:uPagge/uBlogger.git
+[submodule "themes/bento"]
+	path = themes/bento
+	url = git@github.com:leonardofaria/bento.git
