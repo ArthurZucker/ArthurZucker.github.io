@@ -4,3 +4,6 @@
 [submodule "themes/uBlogger"]
 	path = themes/uBlogger
 	url = git@github.com:uPagge/uBlogger.git
+[submodule "themes/bento"]
+	path = themes/bento
+	url = git@github.com:ArthurZucker/bento.git
