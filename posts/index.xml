@@ -1,24 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Arthur&#39;s website</title>
-    <link>http://example.org/posts/</link>
-    <description>Recent content in Posts on Arthur&#39;s website</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 25 Jul 2021 10:12:14 +0200</lastBuildDate>
-    
-	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>My First Post</title>
-      <link>http://example.org/posts/my-first-post/</link>
-      <pubDate>Sun, 25 Jul 2021 10:12:14 +0200</pubDate>
-      
-      <guid>http://example.org/posts/my-first-post/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Life as a young engineer</title><link>https://arthurzucker.github.io/posts/</link><description>Recent content in Posts on Life as a young engineer</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2021, Zucker Arthur; all rights reserved.</copyright><lastBuildDate>Sat, 12 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://arthurzucker.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>BRATS2021</title><link>https://arthurzucker.github.io/posts/adas-jetson-nano-software/</link><pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate><guid>https://arthurzucker.github.io/posts/adas-jetson-nano-software/</guid><description>Recently I am working on BRATS2021 with my long time collegue Younes Belkada.
+d2 or (2) AC d2 and BC</description></item></channel></rss>
