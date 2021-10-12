@@ -95,7 +95,7 @@ Sep 22, 2021</span>
 <a href=https://arthurzucker.github.io/tags/reinforcement-learning class="post_tag button button_translucent">Reinforcement Learning
 </a><svg class="icon"><use xlink:href="#loop"/></svg>
 <span class=post_edited_date>
-Oct 11, 2021</span>
+Oct 12, 2021</span>
 </div>
 <div class=post_share>
 Share on:
@@ -211,89 +211,39 @@ TODO, define the 4 notions above in the case of a simple atari game.</p>
 <p>This part answers the question of how good is a policy, and how do we measure this.</p>
 <h3 id=state-value-function>State value function</h3>
 <p>The state value function allows us to determine the effectiveness of a policy. Various definitions can be used depending on the problem at hand. For the following definitions, let $\pi = (d_1, d_2, ...,)$ be a deterministic policy.</p>
-<ul>
-<li>The <g>Finite time horizon T</g> policy, sets a deadline $T$, at which the sum of the rewards up to $T$ will be computed. The value function can be expressed as :</li>
-</ul>
+<div style=padding-left:30px>
+🎲 The <g>Finite time horizon T</g> policy, sets a deadline $T$, at which the sum of the rewards up to $T$ will be computed. The value function can be expressed as :
 <p>$$ V^\pi(t,s) = \mathbb{E}\left[ \sum_{\tau = t}^{T-1} r(s_\tau,d_\tau(h_\tau)) + R(s_T) \mid s_t = s; \pi = (d_1, d_2, ...,) \right ]$$</p>
 <p>Here, where $R$ is a value function for the final state. This mathematical formula simply expresses the fact that the state value function $V$, for a certain policy $\pi$, a time $t$ which will be the the "beginning" of the computation, and a state $s$ such that at time $t$, the system is in the state $s$, is equal to the Expectation of the sum of the rewards obtained taking actions according ot the policy, and receiving the corresponding rewards. We have to take into account the Expectation because the decision process can be stochastic, and thus the Expectation gives the equivalent of the mean rewards in a stochastic model.<br>
-📝 It is usually used when there is a deadline to meet.</p>
-<ul>
-<li>
-<p>The <g></g></p>
-</li>
-<li>
-<p><g></g></p>
-</li>
-<li>
-<p><g></g></p>
-</li>
-</ul>
-<h2 id=following-part-belongs-to-what-i-wrote-during-the-class>Following part belongs to what I wrote during the class</h2>
-<h3 id=optimality-policy>Optimality policy</h3>
-<p>How good is the policy?
-<strong>Sate Value Function</strong>, focus on the sum of rewards. Finite horizon T, after T the game is done. Depends on the time in that state. Expectation under the policy of the sum reward!</p>
-<p>Popular is: infinite horison with discount, rewards closer in time receive a hogher importance! How far-sighted is my agent? Max immediate reward or not</p>
-<p>Stochastic shortest path, agent will reach a termination state. <em>Used when ther is a specific goal condition</em>. p28 h_t solely dependent ?</p>
-<p>$a_t \approx d_t(s_t)$ at drawn form decision rule $d_t$ and state $s_t$</p>
-<p>Infinite Horizon with average reward. Consider the average reward, most complicated setting, so will not cover much bout it. Expectation, over all the randomicity involved in the computation.</p>
-<p>Optimal policy maximises the value function, over the set of state over all the policies. V* is the optimal policy. Value function dpends on the state, it is not a well defined optimisation function, but there is always one maximising.</p>
-<h1 id=optimisation-problem>Optimisation problem</h1>
-<h2 id=solving-infinite-horizon-discounted-mdp>Solving Infinite horizon discounted MDP</h2>
-<p>Solving <strong>exactly</strong> an MDP : dynamic programming, know both P and R. MDP is stable, finite state and actions. Bellman equations?
-p5 most generic definition. Find the max in the policy state. How to simplify the problem?</p>
-<p>proba of being in a state S at time t and taking action. Proba based on the time, sum over time for it to be independent. Discounted sum of the proba over time.</p>
-<h4 id=history-based---markov-policies>History based -> Markov Policies?</h4>
-<p><strong>theorem</strong> :
-for any history based policy, there exists a markov policy. They are as expressive as history-based policies.
-Why? the value function is equivalent to product between reward and occupancy measure! All the history dep has the same occupancy measure, can consider the same markov. Now can focus on the single state I am in, not all the history. Important theorem. Stationary policies can generate any value functions</p>
-<h4 id=non-stationary---stationary>Non stationary -> stationary</h4>
-<p>Can show the same think with the occupancy measure. Both are as expressive. We now have fixed decision rule + markov.
-Proofs can be found, should I try to give an intuitive proof? By analysing it.
-But still have al ot of policies to check.</p>
-<p>Problems: policy evaluation and control?</p>
-<h3 id=policy-evaluation--compute-value-function-on-the-policy>Policy evaluation : compute value function on the policy</h3>
-<p><strong>Bellman equation</strong>, the value functions satisfies it. reward you get in state s plus the expectation based on the transition function. Fixed point equation. <strong>CORE OF Dynammic approach</strong>. Allow us to solve an RL problem. Proof skipped, I will try to explain it.</p>
-<p>Usding the equation: S variables, linear constraints with S equations and variables. => matrix notation. Fundamental matrix $(I-\gamma P ^\pi )^-1 \times r^\pi$ => solve it by inverting the SxS matrix.</p>
-<h3 id=control-mdp-given-find-the-optimal-policy>Control? MDP given, find the optimal policy</h3>
-<p>policy evaluation is used for that! => to find the optimal policy.
-Bellman equation again, principle of optimality [1957]. P optimal if the next states are also optimal. (hints on the fixed point equation).</p>
-<p>Now deterministic, always there in MDP!</p>
-<p>Given the equations, the optimal policy maximizes the value function. Might be multiple action, pic any.</p>
-<p>2 important incomes : bellman inequality, fixed point; optimal V* => get policy by being greedy.
-No linear system, so can't solve it linearly. Complication starts here. Iterative and all. The control problem is what we need to solve!</p>
-<p>Assumption? we know P and R, and that the MDP is stable.</p>
-<h4 id=bellman-operator>Bellman operator</h4>
-<p>associated to the bellman equation.
-Can right now using the operator : $V= T^\pi V$ same for optimal</p>
-<p><strong>Properies</strong> :</p>
-<ul>
-<li>Monotonicy</li>
-<li>Additivity</li>
-<li>contraction in Linf norm. Application of the operator, makes the results closer than were we started. Its converging toward something.</li>
-<li>fixed point : exists a unique fixed point $V^\pi$ and $V^*$</li>
-</ul>
-<p>Results from Banach fixed point theorem. The iterative operator will converge! Key property! To define a solution.</p>
-<blockquote>
-<p>Summarize :
-Few concepts to remind :</p>
-</blockquote>
-<ul>
-<li>transition proba</li>
-<li>reward function</li>
-<li>policy
-define a MDP
-Optimality? aime ot solve the cumulative reward = V or value function
-Can restrict the set of policies, stationary, markov and deterministic, which simplifies.
-Bellman operators are fundamental and relates the definition in a single step. Can right as a single step, value is reward plus expectation in the next step.
-Nice properties, guarantees that we can run it iteratively.</li>
-</ul>
-<p>page 30 : pi * : a policie, the optimal is non zero only for the actions that are optimal. Select any deterministic policy and selecting it. pi^* (s) belongs to the argmax. => its deterministic and can thus pic any actions that belong to the argmax. Greedy! with respect to the bellman operators.
-p30 strictly positive</p>
-<p><strong>State action</strong> vs <strong>state value</strong> function.</p>
-<p>Another element? State action greedy function? utility vs utility and action.
-Sum of rewards discounted, forcing initial action to be a, then follow the policy for all the next states etc. Q function?! Optimal policy is greedy with respect to Q. What is greedy? p41, V*(s').
-Start from Q* is simply pi(s) \in max Q*(s,a))
-They also satisfy the bellman equation.</p>
+$\qquad$📝 It is usually used when there is a deadline to meet.</p>
+</div>
+<div style=padding-left:30px>
+🎲 The <g> Infinite Time Horizon with discount </g> translates a problem that never terminates. Rewards closer in time receive a higher importance :
+<p>$$ V^{\pi}\left(s\right)\ =\ \mathbb{E}\left[\sum_{t=0}^{\infty}\gamma^tr\left(s_t,d_t\left(h_t\right)\right)\ \mid s_{0\ }=s;\pi \right] $$</p>
+<p>where $0\leq\gamma&lt;1$ is the <em>discount</em> factor. If it's small, the value function focusses on short-term reward, if it's big, on long term reward.
+This series always converges <br>
+$\qquad$📝 We implement it when there is uncertainty about the deadline, or intrinsic definition of discount ?????? @TODO give examples</p>
+</div>
+<div style=padding-left:30px>
+🎲 The <g> Stochastic shortest path </g>, the problem never terminates but the agent will reach a termination state.
+<p>$$V^{\pi}\left(s\right)\ =\ \mathbb{E}\left[\sum_{t=0}^{T_{\pi}}r\left(s_t,d_t\left(h_t\right)\right)\ \mid s_{0\ }=s;\pi\right]$$</p>
+<p>$T_{\pi}$ : first random time when the termination state is achieved. <br>
+$\qquad$📝 Used when there is a specific goal condition</p>
+</div>
+<div style=padding-left:30px>
+🎲 The <g> Infinite time horizon with average reward</g>, the problem never terminates but the agent focuses on the expected average of the rewards
+<p>$$V^{\pi}\left(s\right)\ =\ \lim_{T\to\infty}\ \mathbb{E}\left[\frac{1}{T}\sum_{t=0}^{T-1}r\left(s_t,d_t\left(h_t\right)\right)\ \mid s_{0\ }=s;\pi\right]$$</p>
+<p>$T_{\pi}$ : first random time when the termination state is achieved. <br>
+$\qquad$📝 Used when the system should be constantly controlled over tim</p>
+</div>
+<span class=expand>
+<span class=expand-label style=cursor:pointer onclick="$h=$(this),$h.next('div').slideToggle(100,function(){$h.children('i').attr('class',function(){return $h.next('div').is(':visible')?'closeme':'fas fa-fas fa-bars'})})"><svg class="icon"><use xlink:href="#loop"/></svg>
+Click me!<svg class="icon"><use xlink:href="#.Get%201"/></svg>
+</span>
+<div class=expand-content style="display:none;margin:10px 0">
+Hidden content
+</div>
+</span>
 <section class=footnotes role=doc-endnotes>
 <hr>
 <ol>
