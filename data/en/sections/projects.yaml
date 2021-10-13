@@ -45,3 +45,28 @@ projects:
   url: "/posts/mva/rl/lesson1/"
   summary: As a memebr of the [Island Bat Research Group]() I am developing a Passive Acoustic Monitoring pipeline based on AI
   tags: ["hobby","portfolio"]
+
+- name: Dynamic Hand Gesture recognition
+  logo: /images/sections/projects/github.svg
+  role: Homework  
+  timeline: "5th semester at Polyetch Sorbonne"
+  repo: https://github.com/clementapa/Project_Static_and_Dynamic_Hand_Gestures
+  summary: During my M. Eng.'s deep learning class, I tackled deep learning based classification of hand crafted features. This first approach does not use computer vision, and rather relies on handcrafted features.
+  tags: ["academic","deep learning"]
+
+- name: Batch merge and merge sort using CUDA programming
+  logo: /images/sections/projects/github.svg
+  role: Homework  
+  timeline: "5th semester at Polyetch Sorbonne"
+  repo: https://github.com/ArthurZucker/AdvancedHighPerformanceComputing
+  summary: During my Ms. Eng. deep learning classes, I tackled deep learning based classification of hand crafted features. This first approach does not use computer vision, and rather relies on handcrafted features.
+  tags: ["academic","HPC","CUDA"]
+
+- name: Finiet Element Method
+  logo: /images/sections/projects/github.svg
+  role: Homework  
+  timeline: "5th semester at Polyetch Sorbonne"
+  repo: https://github.com/clementapa/Projet_Maillage_et_Elements_Finis
+  summary: My colleague and I implemented the Finite Element Method in python. We tested it on a model of my previous flat. The repo is not available in english yet.
+  tags: ["academic","applied mathematics","Python"]
+
