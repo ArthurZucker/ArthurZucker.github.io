@@ -1,7 +1,7 @@
-baseURL: https://hugo-toha.github.io
+baseURL: https://arthurzucker.github.io
 
 languageCode: en-us
-title: "John's Blog"
+title: "Arthur Zucker's Blog"
 theme: "toha"
 
 # Manage languages
@@ -10,9 +10,7 @@ languages:
   en:
     languageName: English
     weight: 1
-  bn:
-    languageName: বাংলা
-    weight: 3
+
 
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
 # DefaultContentLanguage: bn
@@ -35,8 +33,8 @@ outputs:
     - RSS
     - JSON
 
-# Enable Google Analytics
-googleAnalytics: UA-122321624-2
+# # Enable Google Analytics
+# googleAnalytics: UA-122321624-2
 
 # Enable global emoji support
 enableEmoji: true
@@ -54,9 +52,9 @@ params:
     favicon: /images/site/favicon.png
 
   # GitHub repo of your site
-  gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
+  gitRepo: https://github.com/ArthurZucker/ArthurZucker.github.io
   # Default branch of your Git repo
-  gitBranch: source
+  gitBranch: main
 
   # Configure various features of this theme
   features:
@@ -108,12 +106,12 @@ params:
       enable: true
     # Show/hide credentials section in the footer. Default is "true".
     credentials:
-      enable: true
+      enable: false
 
     # Show/hide newsletter section in the footer. Default is "true".
     # Currently, it supports "mailchimp".
     newsletter:
-      enable: true
+      enable: false
       provider: mailchimp
       mailchimpURL: https://github.us1.list-manage.com/subscribe/post?u=19de52a4603135aae97163fd8&amp;id=094a24c76e
 
