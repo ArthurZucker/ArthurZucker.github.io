@@ -1,0 +1,382 @@
+<!doctype html><html>
+<head>
+<title>Reinforcement learning, lesson 1</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<link rel=stylesheet href=/css/bootstrap.min.css>
+<link rel=stylesheet href=/css/layouts/main.css>
+<link rel=stylesheet href=/css/navigators/navbar.css>
+<link rel=stylesheet href=/css/plyr.css>
+<link rel=stylesheet href=/css/flag-icon.min.css>
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel=stylesheet>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css>
+<link rel=icon type=image/png href=/images/site/favicon3_hu62e62282d1df9a6f522c194700ff0a75_33785_42x0_resize_box_3.png>
+<meta property="og:title" content="Reinforcement learning, lesson 1">
+<meta property="og:description" content="Sample post with multiple images, embedded video ect.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://arthurzucker.github.io/posts/mva/rl/lesson1/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2020-06-08T08:06:25+06:00">
+<meta property="article:modified_time" content="2020-06-08T08:06:25+06:00">
+<meta name=description content="Sample post with multiple images, embedded video ect.">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css>
+<link rel=stylesheet href=/css/layouts/single.css>
+<link rel=stylesheet href=/css/navigators/sidebar.css>
+<link rel=stylesheet href=/css/style.css>
+</head>
+<body data-spy=scroll data-target=#TableOfContents data-offset=80>
+<div class="container-fluid bg-dimmed wrapper">
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+<div class=container>
+<button class="navbar-toggler navbar-light" id=sidebar-toggler type=button onclick=toggleSidebar()>
+<span class=navbar-toggler-icon></span>
+</button>
+<a class=navbar-brand href=/>
+<img src=/images/site/favicon3_hu62e62282d1df9a6f522c194700ff0a75_33785_42x0_resize_box_3.png alt=Logo>
+Arthur Zucker's Blog</a>
+<button class="navbar-toggler navbar-light" id=toc-toggler type=button onclick=toggleTOC()>
+<span class=navbar-toggler-icon></span>
+</button>
+<div class="collapse navbar-collapse lang-selector" id=top-nav-items>
+<ul class="navbar-nav ml-auto">
+</ul>
+</div>
+</div>
+<img src=/images/site/favicon3_hu62e62282d1df9a6f522c194700ff0a75_33785_42x0_resize_box_3.png class=d-none id=main-logo alt=Logo>
+<img src=/images/site/favicon4_hu5db1c7af89e12ca8c711bcc33bb3007c_15810_42x0_resize_box_3.png class=d-none id=inverted-logo alt="Inverted Logo">
+</nav>
+<section class=sidebar-section id=sidebar-section>
+<div class=sidebar-holder>
+<div class=sidebar id=sidebar>
+<form class=mx-auto method=get action=/search>
+<input type=text name=keyword placeholder=Search data-search id=search-box>
+</form>
+<div class=sidebar-tree>
+<ul class=tree id=tree>
+<li id=list-heading><a href=/posts data-filter=all>Posts</a></li>
+<div class=subtree>
+<li><a href=/posts/introduction/ title=Introduction>Introduction</a></li>
+<li>
+<i class="fas fa-minus-circle"></i><a class=active href=/posts/mva/>MVA Courses</a>
+<ul class=active>
+<li>
+<i class="fas fa-minus-circle"></i><a class=active href=/posts/mva/rl/>Reinforcement Learning</a>
+<ul class=active>
+<li><a class=active href=/posts/mva/rl/lesson1/ title="Lesson 1">Lesson 1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=/posts/markdown-sample/ title="Markdown Sample">Markdown Sample</a></li>
+<li><a href=/posts/flying-foxes-study/ title="Shortcodes Sample">Shortcodes Sample</a></li>
+</div>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class=content-section id=content-section>
+<div class=content>
+<div class="container p-0 read-area">
+<div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://arthurzucker.github.io/posts/mva/rl/lesson1/images/forest.jpg)>
+</div>
+<div class=page-content>
+<div class="author-profile ml-auto align-self-lg-center">
+<img class=rounded-circle src=/images/author/me_hue0c31f5a221a4dac786736a317c9bf63_45873_120x120_fit_q75_box.jpg alt="Author Image">
+<h5 class=author-name>Arthur Zucker</h5>
+<p>June 8, 2020</p>
+</div>
+<div class=title>
+<h1>Reinforcement learning, lesson 1</h1>
+</div>
+<div class=taxonomy-terms>
+<ul>
+<li class=rounded><a href=/tags/markdown class="btn, btn-sm">Markdown</a></li>
+<li class=rounded><a href=/tags/content-organization class="btn, btn-sm">Content Organization</a></li>
+<li class=rounded><a href=/tags/multi-lingual class="btn, btn-sm">Multi-lingual</a></li>
+</ul>
+</div>
+<div class=post-content id=post-content>
+<style>r{color:Red}o{color:Orange}g{color:Green}b{color:Blue}</style>
+<p>The course is provided by Matteo Pirotta a Facebook AI Researcher, and is based on one of the previous MVA RL classes by Alessandro Lazaric (FAIR). @TODO add links to their linkdin or websites</p>
+<h2 id=introduction>Introduction</h2>
+<h3 id=what-is-rl-when-to-use-it-why-rl>What is RL? When to use it? Why RL?</h3>
+<p>RL, a short for Reinforcement Learning, is a subclass of machine learning, which focuses on building a model able to learn from his action in an environnement. It builds its knowledge threw <em>reinforcing</em> what it knows, threw trial and error.</p>
+<p>RL has a lot of applications, ranging from finance (where the goal can be to optimize sales live, and the model learns to buy/sell) to robotics, game solving or exploration. Any task which requires an action to be taken to maximize a utility function can use RL models. One of the most successful usage of RL is <strong><a href>alphago</a></strong>, a model which taught himself how to play <em>Go</em>, and beat the world champion. <em>Go</em> was considered to be the last barrier, one of the most complex game, given the huge amount of configurations : more than <strong>??</strong> which is more atom than the universe contains.</p>
+<p>Let&rsquo;s try to give a proper definition to RL.
+In any RL model, there is :</p>
+<ul>
+<li>an RL agent</li>
+<li>an Environment, deterministic or stochastic</li>
+<li>actions</li>
+<li>rewards, sometimes long-term like in go, or short term in portfolio management. But you can have intermediate rewards/signals. You need the knowledge to do that, but might not be possible. Long time effects/certain configurations are optimal?. The function is still free to be designed.</li>
+<li>states, sometimes unknown, like the stock prices that are unpredictable. Can only see a realization. Lots of uncertainty.</li>
+</ul>
+<p>Goal is to maximize the reward. Sometimes you don&rsquo;t know the Environment / reward and can only observe! Connected to adaptive control theory, act by looking at the observations you get through the interactions with the systems.</p>
+<p><strong>Framework for learning by interaction under uncertainty</strong>, agent takes action, receives reward, and the environment evolves to the next state.</p>
+<h3 id=content-of-this-note->Content of this note :</h3>
+<ul>
+<li>Reward : function?</li>
+<li>Value : cumulative reward an agent can take</li>
+<li>Policy : Actions to take in a state</li>
+</ul>
+<p>How to model and RL problem?</p>
+<ul>
+<li>Markov process</li>
+</ul>
+<p>How to solve it?</p>
+<ul>
+<li>Dynamic programming</li>
+</ul>
+<p>Solve incrementally?</p>
+<ul>
+<li>temporal difference, Q-learning using stochastic approximation.</li>
+</ul>
+<p>How to solve approximately an RL problem?</p>
+<ul>
+<li>policy gradient, TD based method, deep RL</li>
+</ul>
+<h2 id=1-markov-decision-process>1. Markov Decision Process</h2>
+<p>A RL problem is modelled using <em>Markov processes</em>.</p>
+<h3 id=the-reinforcement-learning-model>The Reinforcement Learning Model</h3>
+<p>(insert image provide)</p>
+<p>It can be described using simple keywords :</p>
+<ul>
+<li>Environment, which defines where the Agent evolves</li>
+<li>Agent, is the ??? learning</li>
+<li>Actions and their associated rewards</li>
+<li>States, which allow the definition of the system</li>
+</ul>
+<p>Lets follow along a simple example throughout this course, in order to better understand each notions.
+TODO, define the 4 notions above in the case of a simple atari game.</p>
+<h3 id=the-rl-interactions>The RL interactions</h3>
+<p>The classic RL interaction is as follows:</p>
+<p>We have a discrete decision time $t$ (which would be for example seconds), and at each timestamp :</p>
+<ol>
+<li>The <em>agent</em> selects an <em>action</em> $a_t$, based on $s_t$ the current <em>state</em> of the system.</li>
+<li>The <em>agent</em> gets his <em>reward</em> $r_t$</li>
+<li>The <em>Environment</em> moves to a new state $s_{t+1}$</li>
+</ol>
+<h3 id=markov-chains>Markov chains</h3>
+<p>Markov Chains are the building blocks of RL. A Markov Chain is a stochastic (which means that it includes randomness ) model describing a sequence of possible events in which the probability of each event depends only on the state attained in the previous event<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. In order to create a model, we need to introduce mathematical definitions.</p>
+<p><g>Definition :</g> Given $S$, a state space and a bounded compact subset of the Euclidean space, the discrete time dynamic system $(s_t)_{t\in \mathbb{N}}$ is a markov Chain <strong>if it satisfies</strong> the <r>Markov property</r>:</p>
+<p>$$ \mathbb{P}\left(s_{t+1}=s \mid s_{t}, s_{t-1}, \ldots, s_{0}\right)=\mathbb{P}\left(s_{t+1}=s \mid s_{t}\right)$$</p>
+<p>This means that given an initial state $s_0$, the markov chain is defined by the transition probability : $p\left(s^{\prime} \mid s\right)=\mathbb{P}\left(s_{t+1}=s^{\prime} \mid s_{t}=s\right)$.</p>
+<p><o> Intuition:</o> a markov chain only needs an initial state, and a transition probability to figure out any later state, it is defined by the transition probability.</p>
+<p>@TODO add 4 states markov chain example with attari like states</p>
+<h3 id=markov-decision-process-mdp>Markov Decision Process (MDP)</h3>
+<p>A Markov Decision Process is a tool, to model decision making when outcomes can be random.</p>
+<p><g>Definition :</g> a Markov Decision Process is defined as a tuple <b>$M=(S,A,p,r)$</b> with</p>
+<ul>
+<li>$S$ the (finite) State space</li>
+<li>$A$ the (finite) Action space</li>
+<li>$p(s'|s,a)$ the transition probability, such that $\mathbb{P}\left(s_{t+1}=s' \mid s_{t}=s,a_t=a\right)$</li>
+<li>$r(s,a,s')$ is the reward of the transition from $s$ to $s'$ taking the action $a$. The reward can be stochastic, but we can express its distribution, $v$ for $s,a$ as $v(s,a)$. Thus the reward can be writtent as : $r(s,a) = \mathbb{E}_{R\sim v(s,a)}[R]$.</li>
+</ul>
+<h4 id=assumptions>Assumptions</h4>
+<p><b>Markov assumptions</b> : the current state $s$ and the action $a$ are a sufficient statistic for the next state $s'$. This means that &ldquo;no other statistic that can be calculated from the same sample provides any additional information as to the value of the parameter&rdquo;<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. Our statistic provides as much information as possible.</p>
+<p><b>Time assumption</b> : time is discrete, not continuous. At each step, $t\rightarrow t+1$.</p>
+<p><b>Reward assumption</b> : the reward is uniquely defined by a transition from a state $s$, to $s'$ and an action $a$.</p>
+<p><b>Stationary assumption</b> : transition and reward don&rsquo;t change with time. Otherwise, it&rsquo;s non-stationary.</p>
+<h2 id=2-policy>2. Policy</h2>
+<p><g>Definition : </g>a decision rule $d$, which chooses an action from the state $S$ of the system can be :</p>
+<ul>
+<li>Deterministic, given the same set of state $S$, the action $a\in A$ will be chosen</li>
+<li>Stochastic, a probability distribution over the actions determines $a$.</li>
+<li>History-dependant, and is thus</li>
+<li>Markov</li>
+</ul>
+<p><g>Definition</g> : A policy is a sequence of decision rules, it can be :</p>
+<ul>
+<li>Non-stationary, then $\pi = (d_0,d_1,&mldr;)$</li>
+<li>stationary, then $\pi = (d,d,&mldr;)$</li>
+</ul>
+<p>At each round t, an agent following the policy $\pi$ selects the actions $a_t \sim d_t(s_t)$ .</p>
+<h3 id=markov-chain-of-a-policy>Markov chain of a policy</h3>
+<p>A stationary policy defines a Markov chain on a random process! Why? Well the transition probability of a random process $(s_t)_{t \in \mathbb{N}}$ with regards to a stationary policy $\pi$ is the following :</p>
+<p>$$ P^\pi (s'\mid s) = \mathbb{P}(s_{t+1}=s' \mid s_t = s, \pi) $$</p>
+<p>Every actions in $A$ (even if it does not take the state from $s$ to $s'$) has to be taken into account. Thus we deduce that $$ p^\pi (s'\mid s) = \sum_{a\in A} \pi(s,a)p(s'\mid s,a) $$</p>
+<h2 id=3-optimality-principle>3. Optimality Principle</h2>
+<p>This part answers the question of how good is a policy, and how do we measure this.</p>
+<h3 id=state-value-function>State value function</h3>
+<p>The state value function allows us to determine the effectiveness of a policy. Various definitions can be used depending on the problem at hand. For the following definitions, let $\pi = (d_1, d_2, &mldr;,)$ be a deterministic policy.</p>
+<div style=padding-left:30px>
+🎲 The <g>Finite time horizon T</g> policy, sets a deadline $T$, at which the sum of the rewards up to $T$ will be computed. The value function can be expressed as :
+<p>$$ V^\pi(t,s) = \mathbb{E}\left[ \sum_{\tau = t}^{T-1} r(s_\tau,d_\tau(h_\tau)) + R(s_T) \mid s_t = s; \pi = (d_1, d_2, &mldr;,) \right ]$$</p>
+<p>Here, where $R$ is a value function for the final state. This mathematical formula simply expresses the fact that the state value function $V$, for a certain policy $\pi$, a time $t$ which will be the the &ldquo;beginning&rdquo; of the computation, and a state $s$ such that at time $t$, the system is in the state $s$, is equal to the Expectation of the sum of the rewards obtained taking actions according ot the policy, and receiving the corresponding rewards. We have to take into account the Expectation because the decision process can be stochastic, and thus the Expectation gives the equivalent of the mean rewards in a stochastic model.<br>
+$\qquad$📝 It is usually used when there is a deadline to meet.</p>
+</div>
+<div style=padding-left:30px>
+🎲 The <g> Infinite Time Horizon with discount </g> translates a problem that never terminates. Rewards closer in time receive a higher importance :
+<p>$$ V^{\pi}\left(s\right)\ =\ \mathbb{E}\left[\sum_{t=0}^{\infty}\gamma^tr\left(s_t,d_t\left(h_t\right)\right)\ \mid s_{0\ }=s;\pi \right] $$</p>
+<p>where $0\leq\gamma&lt;1$ is the <em>discount</em> factor. If it&rsquo;s small, the value function focusses on short-term reward, if it&rsquo;s big, on long term reward.
+This series always converges <br>
+$\qquad$📝 We implement it when there is uncertainty about the deadline, or intrinsic definition of discount ?????? @TODO give examples</p>
+</div>
+<div style=padding-left:30px>
+🎲 The <g> Stochastic shortest path </g>, the problem never terminates but the agent will reach a termination state.
+<p>$$V^{\pi}\left(s\right)\ =\ \mathbb{E}\left[\sum_{t=0}^{T_{\pi}}r\left(s_t,d_t\left(h_t\right)\right)\ \mid s_{0\ }=s;\pi\right]$$</p>
+<p>$T_{\pi}$ : first random time when the termination state is achieved. <br>
+$\qquad$📝 Used when there is a specific goal condition</p>
+</div>
+<div style=padding-left:30px>
+🎲 The <g> Infinite time horizon with average reward</g>, the problem never terminates but the agent focuses on the expected average of the rewards
+<p>$$V^{\pi}\left(s\right)\ =\ \lim_{T\to\infty}\ \mathbb{E}\left[\frac{1}{T}\sum_{t=0}^{T-1}r\left(s_t,d_t\left(h_t\right)\right)\ \mid s_{0\ }=s;\pi\right]$$</p>
+<p>$T_{\pi}$ : first random time when the termination state is achieved. <br>
+$\qquad$📝 Used when the system should be constantly controlled over tim</p>
+</div>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p><a href=https://en.wikipedia.org/wiki/Markov_chain>https://en.wikipedia.org/wiki/Markov_chain</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2 role=doc-endnote>
+<p><a href=https://en.wikipedia.org/wiki/Sufficient_statistic#cite_note-Fisher1922-1>https://en.wikipedia.org/wiki/Sufficient_statistic#cite_note-Fisher1922-1</a>&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+<div class="row pl-3 pr-3">
+<div class="col-md-6 share-buttons">
+<strong>Share on:</strong>
+<a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson1%2f" target=_blank>
+<i class="fab fa-facebook"></i>
+</a>
+<a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson1%2f&text=Reinforcement%20learning%2c%20lesson%201&via=Arthur%20Zucker%27s%20Blog" target=_blank>
+<i class="fab fa-twitter"></i>
+</a>
+<a class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson1%2f&title=Reinforcement%20learning%2c%20lesson%201" target=_blank>
+<i class="fab fa-reddit"></i>
+</a>
+<a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson1%2f&title=Reinforcement%20learning%2c%20lesson%201" target=_blank>
+<i class="fab fa-linkedin"></i>
+</a>
+<a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text=Reinforcement%20learning%2c%20lesson%201 https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson1%2f" target=_blank>
+<i class="fab fa-whatsapp"></i>
+</a>
+<a class="btn btn-sm email-btn" href="mailto:?subject=Reinforcement%20learning%2c%20lesson%201&body=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson1%2f" target=_blank>
+<i class="fas fa-envelope-open-text"></i>
+</a>
+</div>
+<div class="col-md-6 btn-improve-page">
+<a href=https://github.com/ArthurZucker/ArthurZucker.github.io/edit/main/content/posts/MVA/RL/lesson1/index.md title="Improve this page" target=_blank rel=noopener>
+<i class="fas fa-code-branch"></i>
+Improve this page
+</a>
+</div>
+</div>
+<hr>
+<div class="row next-prev-navigator">
+<div class="col-md-6 previous-article">
+<a href=/posts/introduction/ title=Introduction class="btn btn-outline-info">
+<div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+<div class=next-prev-text>Introduction</div>
+</a>
+</div>
+<div class="col-md-6 next-article">
+<a href=/posts/markdown-sample/ title="Markdown Samples" class="btn btn-outline-info">
+<div>Next <i class="fas fa-chevron-circle-right"></i></div>
+<div class=next-prev-text>Markdown Samples</div>
+</a>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<a id=scroll-to-top class=btn><i class="fas fa-chevron-circle-up"></i></a>
+</section>
+<section class=toc-section id=toc-section>
+<div class=toc-holder>
+<h5 class="text-center pl-3">Table of Contents</h5>
+<hr>
+<div class=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#introduction>Introduction</a>
+<ul>
+<li><a href=#what-is-rl-when-to-use-it-why-rl>What is RL? When to use it? Why RL?</a></li>
+<li><a href=#content-of-this-note->Content of this note :</a></li>
+</ul>
+</li>
+<li><a href=#1-markov-decision-process>1. Markov Decision Process</a>
+<ul>
+<li><a href=#the-reinforcement-learning-model>The Reinforcement Learning Model</a></li>
+<li><a href=#the-rl-interactions>The RL interactions</a></li>
+<li><a href=#markov-chains>Markov chains</a></li>
+<li><a href=#markov-decision-process-mdp>Markov Decision Process (MDP)</a>
+<ul>
+<li><a href=#assumptions>Assumptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#2-policy>2. Policy</a>
+<ul>
+<li><a href=#markov-chain-of-a-policy>Markov chain of a policy</a></li>
+</ul>
+</li>
+<li><a href=#3-optimality-principle>3. Optimality Principle</a>
+<ul>
+<li><a href=#state-value-function>State value function</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</section>
+</div>
+<footer class="container-fluid text-center align-content-center footer pb-2">
+<div class="container pt-5">
+<div class="row text-left">
+<div class="col-md-4 col-sm-12">
+<h5>Navigation</h5>
+<ul>
+<li class=nav-item>
+<a class=smooth-scroll href=/#about>About</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#skills>Skills</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#experiences>Experiences</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#education>Education</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#projects>Projects</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#accomplishments>Accomplishments</a>
+</li>
+</ul>
+</div>
+<div class="col-md-4 col-sm-12">
+<h5>Contact me:</h5>
+<ul>
+<li><span>Email: </span> <span>arthur.zucker@ens-paris-saclay.fr</span></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<script type=text/javascript src=/js/jquery-3.4.1.min.js></script>
+<script type=text/javascript src=/js/popper.min.js></script>
+<script type=text/javascript src=/js/bootstrap.min.js></script>
+<script type=text/javascript src=/js/navbar.js></script>
+<script type=text/javascript src=/js/plyr.js></script>
+<script type=text/javascript src=/js/main.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js></script>
+<script src=/js/single.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script>window.MathJax={tex:{inlineMath:[['$','$']]},options:{enableMenu:!0}}</script>
+<script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js></script>
+<style>mjx-container.MathJax[display=inline]{font-size:150%!important}mjx-container.MathJax[display=true]{text-align:left!important}@media screen and (min-width:600px){mjx-container.MathJax[display=true]{padding-left:2rem}}</style>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css integrity=sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js integrity=sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js integrity=sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI crossorigin=anonymous onload=renderMathInElement(document.body)></script>
+</body>
+</html>
