@@ -11,13 +11,14 @@ section:
 
 # Your accomplishments
 accomplishments:
-- name: Advanced Deep Learning
+- name: Advanced Computer Vision with Tensorflow, course 3
   timeline: "Apr 2021 - Mar 2021"
   organization:
     name: Coursera
     url: https://www.coursera.org
-  courseOverview: "This course provides a broad introduction to machine learning, datamining, and statistical pattern recognition. Topics include: (i) Supervised learning (parametric/non-parametric algorithms, support vector machines, kernels, neural networks). (ii) Unsupervised learning (clustering, dimensionality reduction, recommender systems, deep learning). (iii) Best practices in machine learning (bias/variance theory; innovation process in machine learning and AI)."
-  certificateURL: "https://example.com"
+  courseOverview: "The DeepLearning.AI TensorFlow: Advanced Techniques Specialization introduces the features of TensorFlow that provide learners with more control over their model architecture and tools that help them create and train advanced ML models.  
+"
+  certificateURL: "https://coursera.org/share/8ceb83275bc211ff20cb033f6e690a34"
 
 
 
