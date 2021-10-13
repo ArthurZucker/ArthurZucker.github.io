@@ -67,7 +67,7 @@ Arthur Zucker's Blog</a>
 </li>
 </ul>
 </li>
-<li><a href=/posts/markdown-sample/ title="Markdown Sample">Markdown Sample</a></li>
+<li><a href=/posts/projects/ title="Markdown Sample">Markdown Sample</a></li>
 <li><a href=/posts/flying-foxes-study/ title="Shortcodes Sample">Shortcodes Sample</a></li>
 </div>
 </ul>
@@ -114,28 +114,6 @@ In any RL model, there is :</p>
 </ul>
 <p>Goal is to maximize the reward. Sometimes you don&rsquo;t know the Environment / reward and can only observe! Connected to adaptive control theory, act by looking at the observations you get through the interactions with the systems.</p>
 <p><strong>Framework for learning by interaction under uncertainty</strong>, agent takes action, receives reward, and the environment evolves to the next state.</p>
-<h3 id=content-of-this-note->Content of this note :</h3>
-<ul>
-<li>Reward : function?</li>
-<li>Value : cumulative reward an agent can take</li>
-<li>Policy : Actions to take in a state</li>
-</ul>
-<p>How to model and RL problem?</p>
-<ul>
-<li>Markov process</li>
-</ul>
-<p>How to solve it?</p>
-<ul>
-<li>Dynamic programming</li>
-</ul>
-<p>Solve incrementally?</p>
-<ul>
-<li>temporal difference, Q-learning using stochastic approximation.</li>
-</ul>
-<p>How to solve approximately an RL problem?</p>
-<ul>
-<li>policy gradient, TD based method, deep RL</li>
-</ul>
 <h2 id=1-markov-decision-process>1. Markov Decision Process</h2>
 <p>A RL problem is modelled using <em>Markov processes</em>.</p>
 <h3 id=the-reinforcement-learning-model>The Reinforcement Learning Model</h3>
@@ -159,12 +137,14 @@ TODO, define the 4 notions above in the case of a simple atari game.</p>
 </ol>
 <h3 id=markov-chains>Markov chains</h3>
 <p>Markov Chains are the building blocks of RL. A Markov Chain is a stochastic (which means that it includes randomness ) model describing a sequence of possible events in which the probability of each event depends only on the state attained in the previous event<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. In order to create a model, we need to introduce mathematical definitions.</p>
-<p><g>Definition :</g> Given $S$, a state space and a bounded compact subset of the Euclidean space, the discrete time dynamic system $(s_t)_{t\in \mathbb{N}}$ is a markov Chain <strong>if it satisfies</strong> the <r>Markov property</r>:</p>
+<div class="alert alert-success">
+<strong><g>Definition :</g> Given $S$, a state space and a bounded compact subset of the Euclidean space, the discrete time dynamic system $(s_t)_{t\in \mathbb{N}}$ is a markov Chain <strong>if it satisfies</strong> the <r>Markov property</r>:</strong>
+</div>
 <p>$$ \mathbb{P}\left(s_{t+1}=s \mid s_{t}, s_{t-1}, \ldots, s_{0}\right)=\mathbb{P}\left(s_{t+1}=s \mid s_{t}\right)$$</p>
 <p>This means that given an initial state $s_0$, the markov chain is defined by the transition probability : $p\left(s^{\prime} \mid s\right)=\mathbb{P}\left(s_{t+1}=s^{\prime} \mid s_{t}=s\right)$.</p>
 <p><o> Intuition:</o> a markov chain only needs an initial state, and a transition probability to figure out any later state, it is defined by the transition probability.</p>
 <p>@TODO add 4 states markov chain example with attari like states</p>
-<h3 id=markov-decision-process-mdp>Markov Decision Process (MDP)</h3>
+<h3 id=-markov-decision-process-mdp>📝 Markov Decision Process (MDP)</h3>
 <p>A Markov Decision Process is a tool, to model decision making when outcomes can be random.</p>
 <p><g>Definition :</g> a Markov Decision Process is defined as a tuple <b>$M=(S,A,p,r)$</b> with</p>
 <ul>
@@ -275,9 +255,9 @@ Improve this page
 </a>
 </div>
 <div class="col-md-6 next-article">
-<a href=/posts/markdown-sample/ title="Markdown Samples" class="btn btn-outline-info">
+<a href=/posts/projects/ title="Table structure recognition" class="btn btn-outline-info">
 <div>Next <i class="fas fa-chevron-circle-right"></i></div>
-<div class=next-prev-text>Markdown Samples</div>
+<div class=next-prev-text>Table structure recognition</div>
 </a>
 </div>
 </div>
@@ -297,7 +277,6 @@ Improve this page
 <li><a href=#introduction>Introduction</a>
 <ul>
 <li><a href=#what-is-rl-when-to-use-it-why-rl>What is RL? When to use it? Why RL?</a></li>
-<li><a href=#content-of-this-note->Content of this note :</a></li>
 </ul>
 </li>
 <li><a href=#1-markov-decision-process>1. Markov Decision Process</a>
@@ -305,7 +284,7 @@ Improve this page
 <li><a href=#the-reinforcement-learning-model>The Reinforcement Learning Model</a></li>
 <li><a href=#the-rl-interactions>The RL interactions</a></li>
 <li><a href=#markov-chains>Markov chains</a></li>
-<li><a href=#markov-decision-process-mdp>Markov Decision Process (MDP)</a>
+<li><a href=#-markov-decision-process-mdp>📝 Markov Decision Process (MDP)</a>
 <ul>
 <li><a href=#assumptions>Assumptions</a></li>
 </ul>
