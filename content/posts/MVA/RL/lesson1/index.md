@@ -44,23 +44,6 @@ Goal is to maximize the reward. Sometimes you don't know the Environment / rewar
 
 **Framework for learning by interaction under uncertainty**, agent takes action, receives reward, and the environment evolves to the next state. 
 
-### Content of this note : 
-
- - Reward : function? 
- - Value : cumulative reward an agent can take
- - Policy : Actions to take in a state
-
-How to model and RL problem? 
- - Markov process
-
-How to solve it? 
- - Dynamic programming 
-
-Solve incrementally? 
-- temporal difference, Q-learning using stochastic approximation.
-
-How to solve approximately an RL problem? 
-- policy gradient, TD based method, deep RL
 
 ## 1. Markov Decision Process
 
@@ -95,7 +78,10 @@ Markov Chains are the building blocks of RL. A Markov Chain is a stochastic  (wh
 
 [^1]: https://en.wikipedia.org/wiki/Markov_chain
 
+{{< alert type="success" >}}
 <g>Definition :</g> Given $S$, a state space and a bounded  compact subset of the Euclidean space, the discrete time dynamic system $(s_t)_{t\in \mathbb{N}}$  is a markov Chain **if it satisfies** the <r>Markov property</r>: 
+{{< /alert >}}
+
 
 $$ \mathbb{P}\left(s_{t+1}=s \mid s_{t}, s_{t-1}, \ldots, s_{0}\right)=\mathbb{P}\left(s_{t+1}=s \mid s_{t}\right)$$
 
@@ -106,7 +92,7 @@ This means that given an initial state $s_0$, the markov chain is defined by the
 
 @TODO add 4 states markov chain example with attari like states
 
-### Markov Decision Process (MDP)
+### :memo: Markov Decision Process (MDP)
 
 A Markov Decision Process is a tool, to model decision making when outcomes can be random. 
 
