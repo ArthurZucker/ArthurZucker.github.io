@@ -1,6 +1,6 @@
 <!doctype html><html lang=en data-figures class=page data-mode=lit>
 <head>
-<title>BRATS2021 | Life as a young engineer</title>
+<title>BRATS2021, Brain Tumor Segmentation | Life as a young engineer</title>
 <meta charset=utf-8>
 <meta name=generator content="Hugo 0.88.1">
 <meta name=viewport content="width=device-width,initial-scale=1">
@@ -9,26 +9,30 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PFYJHY3R2Z')</script>
 <meta property="og:locale" content="en">
 <meta property="og:type" content="article">
-<meta name=description content="Recently I am working on BRATS2021 with my long time collegue Younes Belkada">
+<meta name=description content="I started this as a side project during my holidays, and would love to keep working on this challenging task">
 <meta name=twitter:card content="summary">
 <meta name=twitter:creator content="@none">
-<meta name=twitter:title content="BRATS2021">
-<meta property="og:url" content="https://arthurzucker.github.io/posts/ai-projects/brats/">
-<meta property="og:title" content="BRATS2021">
-<meta property="og:description" content="Recently I am working on BRATS2021 with my long time collegue Younes Belkada">
-<meta property="og:image" content="https://arthurzucker.github.io/posts/ai-projects/brats/brain_free.jpg">
+<meta name=twitter:title content="BRATS2021, Brain Tumor Segmentation">
+<meta property="og:url" content="https://arthurzucker.github.io/posts/ai-projects/kaggle/brats/">
+<meta property="og:title" content="BRATS2021, Brain Tumor Segmentation">
+<meta property="og:description" content="I started this as a side project during my holidays, and would love to keep working on this challenging task">
+<meta property="og:image" content="https://arthurzucker.github.io/posts/ai-projects/kaggle/brain_free.jpg">
 <link rel=apple-touch-icon sizes=180x180 href=https://arthurzucker.github.io/icons/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://arthurzucker.github.io/icons/favicon-32x32.png>
 <link rel=manifest href=https://arthurzucker.github.io/icons/site.webmanifest>
 <link rel=mask-icon href=https://arthurzucker.github.io/safari-pinned-tab.svg color=#002538>
 <meta name=msapplication-TileColor content="#002538">
 <meta name=theme-color content="#002538">
-<link rel=canonical href=https://arthurzucker.github.io/posts/ai-projects/brats/>
+<link rel=canonical href=https://arthurzucker.github.io/posts/ai-projects/kaggle/brats/>
 <link rel=preload href=https://arthurzucker.github.io/css/styles.css integrity as=style crossorigin=anonymous>
 <link rel=preload href=https://arthurzucker.github.io/js/bundle.min.fad5deef9fb8788694f791bf960a39ad1fa85ea9930819f679df19a20785d9d47d3dccc519e3848753179c86f3f6fe36d06f267539ab55d4104e92fdd99d6962.js as=script integrity="sha512-+tXe75+4eIaU95G/lgo5rR+oXqmTCBn2ed8ZogeF2dR9PczFGeOEh1MXnIbz9v420G8mdTmrVdQQTpL92Z1pYg==" crossorigin=anonymous>
 <link rel=stylesheet type=text/css href=https://arthurzucker.github.io/css/styles.css integrity crossorigin=anonymous><link rel=stylesheet href=/css/custom.css>
 </head>
 <body data-code=100 data-lines=true id=documentTop>
+<script src=https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js></script>
+<script>mermaid.initialize({startOnLoad:!0,securityLevel:'loose'})</script>
+<script src=https://kit.fontawesome.com/0239bbdb5a.js crossorigin=anonymous></script>
+<script src=//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js></script>
 <header id=top-navbar class=nav_header>
 <nav class=nav>
 <a href=https://arthurzucker.github.io/ class="nav_brand nav_item">
@@ -89,7 +93,7 @@
 <main>
 <div class="wrap content without-toc type-post">
 <article class=post_content>
-<h1 class=post_title>BRATS2021</h1><div class=post_meta><svg class="icon"><use xlink:href="#calendar"/></svg>
+<h1 class=post_title>BRATS2021, Brain Tumor Segmentation</h1><div class=post_meta><svg class="icon"><use xlink:href="#calendar"/></svg>
 <span class=post_date>
 Sep 12, 2020</span>
 <a href=https://arthurzucker.github.io/tags/computer-vision class="post_tag button button_translucent">Computer Vision
@@ -97,26 +101,25 @@ Sep 12, 2020</span>
 <a href=https://arthurzucker.github.io/tags/healthcare class="post_tag button button_translucent">Healthcare
 </a><svg class="icon"><use xlink:href="#loop"/></svg>
 <span class=post_edited_date>
-Oct 12, 2021</span>
+Oct 13, 2021</span>
 </div>
 <div class=post_share>
 Share on:
-<a href="https://twitter.com/intent/tweet?text=BRATS2021&url=https%3a%2f%2farthurzucker.github.io%2fposts%2fai-projects%2fbrats%2f&tw_p=tweetbutton" class=twitter title="Share on Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
+<a href="https://twitter.com/intent/tweet?text=BRATS2021%2c%20Brain%20Tumor%20Segmentation&url=https%3a%2f%2farthurzucker.github.io%2fposts%2fai-projects%2fkaggle%2fbrats%2f&tw_p=tweetbutton" class=twitter title="Share on Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
 </a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farthurzucker.github.io%2fposts%2fai-projects%2fbrats%2f&t=BRATS2021" class=facebook title="Share on Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farthurzucker.github.io%2fposts%2fai-projects%2fkaggle%2fbrats%2f&t=BRATS2021%2c%20Brain%20Tumor%20Segmentation" class=facebook title="Share on Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
 </a>
 <a href=#linkedinshare id=linkedinshare class=linkedin title="Share on LinkedIn" rel=nofollow><svg class="icon"><use xlink:href="#linkedin"/></svg>
 </a>
-<a href=https://arthurzucker.github.io/posts/ai-projects/brats/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#copy"/></svg>
+<a href=https://arthurzucker.github.io/posts/ai-projects/kaggle/brats/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#copy"/></svg>
 </a>
 </div>
-<div class=js-toc-content><p>Recently I am working on BRATS2021 with my long time collegue <a href=https://younesbelkada.github.io/about/>Younes Belkada</a>.</p>
-<blockquote>
-</blockquote>
+<div class=js-toc-content><p>BRATS (BRAin Tumor Segmentation) is a <a href=https://www.kaggle.com/c/rsna-miccai-brain-tumor-radiogenomic-classification>kaggle competition</a> held every year, which relies on the participation of teams to solve mostly semantic segmentation task related to medical image analysis. This year, the goal of the challenge was to determine the presence of a specific genetic sequence, MGMT promoter methylation, in a tumor, using MRI (Magnetic Resonance Image). This gene sequence plays a strong role in the outcome of chemotherapy in patients with brain tumor, but it can only be analysed using DNA extraction, which takes a lot of time. If a MRI is enough to assess the possibility of giving chemotherapy, it could save thousands of lives.</p>
+<p>I am working on the challenge with my long time colleague, Younes Belkada, who described a part of our work in his <a href=https://younesbelkada.github.io/2021/brain-tumor/> blog post</a>.</p>
 </div>
 <script>talkyardServerUrl=''</script>
 <script async defer src></script>
-<div class=talkyard-comments data-discussion-id=/posts/ai-projects/brats/ style=margin-top:45px>
+<div class=talkyard-comments data-discussion-id=/posts/ai-projects/kaggle/brats style=margin-top:45px>
 <noscript>Please enable Javascript to view comments.</noscript>
 </div>
 </article>

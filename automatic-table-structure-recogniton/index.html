@@ -29,6 +29,10 @@
 <link rel=stylesheet type=text/css href=https://arthurzucker.github.io/css/styles.css integrity crossorigin=anonymous><link rel=stylesheet href=/css/custom.css>
 </head>
 <body data-code=100 data-lines=true id=documentTop>
+<script src=https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js></script>
+<script>mermaid.initialize({startOnLoad:!0,securityLevel:'loose'})</script>
+<script src=https://kit.fontawesome.com/0239bbdb5a.js crossorigin=anonymous></script>
+<script src=//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js></script>
 <header id=top-navbar class=nav_header>
 <nav class=nav>
 <a href=https://arthurzucker.github.io/ class="nav_brand nav_item">
@@ -97,7 +101,7 @@ Jul 25, 2021</span>
 <a href=https://arthurzucker.github.io/tags/clusturing class="post_tag button button_translucent">Clusturing
 </a><svg class="icon"><use xlink:href="#loop"/></svg>
 <span class=post_edited_date>
-Oct 12, 2021</span>
+Oct 13, 2021</span>
 </div>
 <div class=post_share>
 Share on:
@@ -115,7 +119,7 @@ Share on:
 <p>Some organizations still use huge amounts of scanned tables / invoices. Rather than manually typing the contents of the tables into an excel file, one can think of using Deep Learning to tackle this problem.
 Once you identify the distinguishable cells on the tables, we can pass an OCR (Optical Character Recognition) to each cell to read its contents and convert it to an excel file for example.</p>
 <p><p style=text-align:center>
-<img loading=lazy src=/images/projects/table.png alt="The method performs table structure recognition in an unsupervised way">
+<img loading=lazy src=/posts/table.png alt="The method performs table structure recognition in an unsupervised way">
 </p>
 <p style=text-align:center><b>The method performs table structure recognition in an unsupervised way</b></p></p>
 <p>Here comes the task of table structure recognition, the main goal would be to efficiently detect the individual cells given an image containing textual information (characters, digits).</p>
@@ -127,7 +131,7 @@ For example, we can think of an object detection algorithm that predicts the cel
 <p>Here comes the well-discussed border that lies between the research field and industry. In research most of the benchmark datasets are <strong>clean</strong> and sometimes, ML models trained and evaluated on some specific datasets are hard to deploy in real-world application.</p>
 <p>Fortunately, there is a high excitement around text detection algorithms using Deep Learning in the litterature and we can take advantage of it. When we were working at this project, <a href=https://github.com/RubanSeven/CRAFT_keras>CRAFT</a> algorithm was the state-of-the-art text detection algorithm.</p>
 <p><p style=text-align:center>
-<img loading=lazy src=/images/projects/craft.png alt="Pipeline of CRAFT">
+<img loading=lazy src=/posts/craft.png alt="Pipeline of CRAFT">
 </p>
 <p style=text-align:center><b>Pipeline of CRAFT</b></p></p>
 <p>Since these models are state-of-the-art models we maximize the chances that at test time, it will handle well the corner cases. In practice, this model worked well on scanned invoices so we have decided to stick with it.
