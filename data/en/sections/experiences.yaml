@@ -30,7 +30,7 @@ experiences:
     name: Kyoto University, Bio-informatics laboratory
     url: "https://www.kyoto-u.ac.jp/en"
     location: Kyoto, Japan
-    overview: PreExample Co. is a gateway company to enter into Example co. So, nothing special here.
+    overview: The bio-informatics laboratory tackles various issues regarding the protection of wildlife. I have been working on the protection of **flying foxes**, a species of mega-bats. 
   positions:
   - designation: Research Assistant
     start: June 2021
@@ -49,10 +49,10 @@ experiences:
     name: Chainos Solution.
     url: "https://www.chainos.vn/"
     location: Hanoï, Vietnam
-    overview: Deep Learning Intern, R&D team
+    overview: Chainos solution is young startup active as a consulting company, offering blockchain and AI solutions to valued customers across Asia. I joined them as an intern for a 2 month internship. 
   positions:
-  - designation: Intern
-    start: Jun 2019
+  - designation: Deep Learning Intern, R&D team
+    start: June 2019
     end: Aug 2019
     responsibilities:
     - Increase CAD reader performances by implementing voting and using CRAFT
