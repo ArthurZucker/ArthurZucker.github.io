@@ -1,8 +1,8 @@
 ---
-title: Top Category Sample
+title: mva-courses
 menu:
   sidebar:
-    name: Category
-    identifier: category
+    name: MVA Courses
+    identifier: mva-courses
     weight: 20
 ---

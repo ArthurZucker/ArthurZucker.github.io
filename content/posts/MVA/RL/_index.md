@@ -1,9 +1,9 @@
 ---
-title: Sub-Category
+title: rl
 menu:
   sidebar:
-    name: Sub-Category
-    identifier: sub-category
-    parent: category
+    name: Reinforcement Learning
+    identifier: rl
+    parent: mva-courses
     weight: 10
 ---
