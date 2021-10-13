@@ -12,7 +12,6 @@ author:
   image: /images/author/jessica.png
 math: true
 ---
-
 This is a sample post intended to test the followings:
 
 - A different post author.
@@ -20,7 +19,6 @@ This is a sample post intended to test the followings:
 - Markdown content rendering.
 - Math rendering.
 - Emoji rendering.
-
 ---
 # Markdown Syntax Rendering
 
