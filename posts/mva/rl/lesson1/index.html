@@ -23,6 +23,8 @@
 <link rel=stylesheet href=/css/layouts/single.css>
 <link rel=stylesheet href=/css/navigators/sidebar.css>
 <link rel=stylesheet href=/css/style.css>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFYJHY3R2Z"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PFYJHY3R2Z',{anonymize_ip:!1})}</script>
 </head>
 <body data-spy=scroll data-target=#TableOfContents data-offset=80>
 <div class="container-fluid bg-dimmed wrapper">
@@ -62,7 +64,7 @@ Arthur Zucker's Blog</a>
 <li>
 <i class="fas fa-minus-circle"></i><a class=active href=/posts/mva/rl/>Reinforcement Learning</a>
 <ul class=active>
-<li><a class=active href=/posts/mva/rl/lesson1/ title="Lesson 1">Lesson 1</a></li>
+<li><a class=active href=/posts/mva/recvis/lesson1/ title="Lesson 1">Lesson 1</a></li>
 </ul>
 </li>
 </ul>
@@ -98,22 +100,21 @@ Arthur Zucker's Blog</a>
 </div>
 <div class=post-content id=post-content>
 <style>r{color:Red}o{color:Orange}g{color:Green}b{color:Blue}</style>
-<p>The course is provided by Matteo Pirotta a Facebook AI Researcher, and is based on one of the previous MVA RL classes by Alessandro Lazaric (FAIR). @TODO add links to their linkdin or websites</p>
+<p>My notes on the first lesson of Reinforcement Learning</p>
 <h2 id=introduction>Introduction</h2>
-<h3 id=what-is-rl-when-to-use-it-why-rl>What is RL? When to use it? Why RL?</h3>
-<p>RL, a short for Reinforcement Learning, is a subclass of machine learning, which focuses on building a model able to learn from his action in an environnement. It builds its knowledge threw <em>reinforcing</em> what it knows, threw trial and error.</p>
-<p>RL has a lot of applications, ranging from finance (where the goal can be to optimize sales live, and the model learns to buy/sell) to robotics, game solving or exploration. Any task which requires an action to be taken to maximize a utility function can use RL models. One of the most successful usage of RL is <strong><a href>alphago</a></strong>, a model which taught himself how to play <em>Go</em>, and beat the world champion. <em>Go</em> was considered to be the last barrier, one of the most complex game, given the huge amount of configurations : more than <strong>??</strong> which is more atom than the universe contains.</p>
-<p>Let&rsquo;s try to give a proper definition to RL.
-In any RL model, there is :</p>
+<h3 id=basic-rl-model>Basic RL model</h3>
+<p>In any RL model, there is :</p>
 <ul>
 <li>an RL agent</li>
 <li>an Environment, deterministic or stochastic</li>
 <li>actions</li>
-<li>rewards, sometimes long-term like in go, or short term in portfolio management. But you can have intermediate rewards/signals. You need the knowledge to do that, but might not be possible. Long time effects/certain configurations are optimal?. The function is still free to be designed.</li>
-<li>states, sometimes unknown, like the stock prices that are unpredictable. Can only see a realization. Lots of uncertainty.</li>
+<li>rewards ( long/short term, intermediate)</li>
+<li>states (known/unknown)</li>
+<li>a goal: maximizing the reward function</li>
 </ul>
-<p>Goal is to maximize the reward. Sometimes you don&rsquo;t know the Environment / reward and can only observe! Connected to adaptive control theory, act by looking at the observations you get through the interactions with the systems.</p>
-<p><strong>Framework for learning by interaction under uncertainty</strong>, agent takes action, receives reward, and the environment evolves to the next state.</p>
+<div class="alert alert-success">
+<strong>RL is a <strong>Framework for learning by interaction under uncertainty</strong>. An agent takes action, receives reward, and the environment evolves to the next state.</strong>
+</div>
 <h2 id=1-markov-decision-process>1. Markov Decision Process</h2>
 <p>A RL problem is modelled using <em>Markov processes</em>.</p>
 <h3 id=the-reinforcement-learning-model>The Reinforcement Learning Model</h3>
@@ -248,18 +249,6 @@ Improve this page
 </div>
 <hr>
 <div class="row next-prev-navigator">
-<div class="col-md-6 previous-article">
-<a href=/posts/introduction/ title=Introduction class="btn btn-outline-info">
-<div><i class="fas fa-chevron-circle-left"></i> Prev</div>
-<div class=next-prev-text>Introduction</div>
-</a>
-</div>
-<div class="col-md-6 next-article">
-<a href=/posts/projects/ title="Table structure recognition" class="btn btn-outline-info">
-<div>Next <i class="fas fa-chevron-circle-right"></i></div>
-<div class=next-prev-text>Table structure recognition</div>
-</a>
-</div>
 </div>
 <hr>
 </div>
@@ -276,7 +265,7 @@ Improve this page
 <ul>
 <li><a href=#introduction>Introduction</a>
 <ul>
-<li><a href=#what-is-rl-when-to-use-it-why-rl>What is RL? When to use it? Why RL?</a></li>
+<li><a href=#basic-rl-model>Basic RL model</a></li>
 </ul>
 </li>
 <li><a href=#1-markov-decision-process>1. Markov Decision Process</a>
@@ -327,6 +316,9 @@ Improve this page
 </li>
 <li class=nav-item>
 <a class=smooth-scroll href=/#projects>Projects</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#recent-posts>Recent Posts</a>
 </li>
 <li class=nav-item>
 <a class=smooth-scroll href=/#accomplishments>Accomplishments</a>

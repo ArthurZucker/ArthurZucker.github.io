@@ -19,6 +19,8 @@
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css>
 <link rel=stylesheet href=/css/layouts/notes.css>
 <link rel=stylesheet href=/css/navigators/sidebar.css>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFYJHY3R2Z"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PFYJHY3R2Z',{anonymize_ip:!1})}</script>
 </head>
 <body data-spy=scroll data-target=#TableOfContents data-offset=80>
 <div class="container-fluid bg-dimmed wrapper">
@@ -277,6 +279,44 @@ Arthur Zucker's Blog</a>
 }
 </code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>if</span> <span style=color:#a6e22e>_</span>, <span style=color:#a6e22e>err</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>doThing</span>(); <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
   <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#e6db74>&#34;Uh oh&#34;</span>)
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+&lt;<span style=color:#f92672>script</span>&gt;<span style=color:#a6e22e>mermaid</span>.<span style=color:#a6e22e>initialize</span>({ <span style=color:#a6e22e>startOnLoad</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>, <span style=color:#a6e22e>securityLevel</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;loose&#39;</span>});&lt;/<span style=color:#f92672>script</span>&gt;
+
+
+&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;mermaid&#34;</span> <span style=color:#a6e22e>align</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34; left&#34;</span>&gt;
+	
+graph LR;
+    A[Hard edge] --&gt;|r=0| B(a&lt;<span style=color:#f92672>sub</span>&gt;0&lt;/<span style=color:#f92672>sub</span>&gt;)
+    B --&gt; C{Decision}
+    C --&gt;|One| D[Result one]
+    C --&gt;|Two| E[Result two]
+
+&lt;/<span style=color:#f92672>div</span>&gt;
+
+
+</code></pre></div></div>
+</div>
+</div>
+</div>
+<div class=note-card>
+<div class=item>
+<h5 class=note-title><span>mermaid</span></h5>
+<div class=card>
+<div class=card-body><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+&lt;<span style=color:#f92672>script</span>&gt;<span style=color:#a6e22e>mermaid</span>.<span style=color:#a6e22e>initialize</span>({ <span style=color:#a6e22e>startOnLoad</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>, <span style=color:#a6e22e>securityLevel</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;loose&#39;</span>});&lt;/<span style=color:#f92672>script</span>&gt;
+
+
+&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;mermaid&#34;</span> <span style=color:#a6e22e>align</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34; left&#34;</span>&gt;
+	
+graph LR;
+    A[Hard edge] --&gt;|r=0| B(a&lt;<span style=color:#f92672>sub</span>&gt;0&lt;/<span style=color:#f92672>sub</span>&gt;)
+    B --&gt; C{Decision}
+    C --&gt;|One| D[Result one]
+    C --&gt;|Two| E[Result two]
+
+&lt;/<span style=color:#f92672>div</span>&gt;
+
+
 </code></pre></div></div>
 </div>
 </div>
@@ -307,6 +347,9 @@ Arthur Zucker's Blog</a>
 </li>
 <li class=nav-item>
 <a class=smooth-scroll href=/#projects>Projects</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#recent-posts>Recent Posts</a>
 </li>
 <li class=nav-item>
 <a class=smooth-scroll href=/#accomplishments>Accomplishments</a>
