@@ -22,27 +22,29 @@ g { color: Green }
 b { color: Blue }
 </style>
 
-The course is provided by Matteo Pirotta a Facebook AI Researcher, and is based on one of the previous MVA RL classes by Alessandro Lazaric (FAIR). @TODO add links to their linkdin or websites
+My notes on the first lesson of Reinforcement Learning
 
 ## Introduction 
 
-### What is RL? When to use it? Why RL? 
+### Basic RL model
 
-RL, a short for Reinforcement Learning, is a subclass of machine learning, which focuses on building a model able to learn from his action in an environnement. It builds its knowledge threw *reinforcing* what it knows, threw trial and error. 
+<!-- RL, a short for Reinforcement Learning, is a subclass of machine learning, which focuses on building a model able to learn from his action in an environnement. It builds its knowledge threw *reinforcing* what it knows, threw trial and error. 
 
 RL has a lot of applications, ranging from finance (where the goal can be to optimize sales live, and the model learns to buy/sell) to robotics, game solving or exploration. Any task which requires an action to be taken to maximize a utility function can use RL models. One of the most successful usage of RL is **[alphago]()**, a model which taught himself how to play *Go*, and beat the world champion. *Go* was considered to be the last barrier, one of the most complex game, given the huge amount of configurations : more than **??** which is more atom than the universe contains. 
 
-Let's try to give a proper definition to RL. 
+Let's try to give a proper definition to RL.  -->
+
 In any RL model, there is :
  - an RL agent
  - an Environment, deterministic or stochastic
  - actions
- - rewards, sometimes long-term like in go, or short term in portfolio management. But you can have intermediate rewards/signals. You need the knowledge to do that, but might not be possible. Long time effects/certain configurations are optimal?. The function is still free to be designed.  
- - states, sometimes unknown, like the stock prices that are unpredictable. Can only see a realization. Lots of uncertainty. 
+ - rewards ( long/short term, intermediate)  
+ - states (known/unknown)
+ - a goal: maximizing the reward function
 
-Goal is to maximize the reward. Sometimes you don't know the Environment / reward and can only observe! Connected to adaptive control theory, act by looking at the observations you get through the interactions with the systems. 
-
-**Framework for learning by interaction under uncertainty**, agent takes action, receives reward, and the environment evolves to the next state. 
+{{< alert type="success" >}}
+RL is a **Framework for learning by interaction under uncertainty**. An agent takes action, receives reward, and the environment evolves to the next state. 
+{{< /alert >}}
 
 
 ## 1. Markov Decision Process

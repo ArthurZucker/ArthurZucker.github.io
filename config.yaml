@@ -33,8 +33,8 @@ outputs:
     - RSS
     - JSON
 
-# # Enable Google Analytics
-# googleAnalytics: UA-122321624-2
+# Enable Google Analytics
+googleAnalytics: G-PFYJHY3R2Z
 
 # Enable global emoji support
 enableEmoji: true
