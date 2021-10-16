@@ -1,6 +1,6 @@
 <!doctype html><html>
 <head>
-<title>Reinforcement learning, lesson 1</title>
+<title>Computer Vision and Object Recognition, lesson 1</title>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="ie=edge">
@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css>
 <link rel=icon type=image/png href=/images/site/favicon3_hu62e62282d1df9a6f522c194700ff0a75_33785_42x0_resize_box_3.png>
-<meta property="og:title" content="Reinforcement learning, lesson 1">
+<meta property="og:title" content="Computer Vision and Object Recognition, lesson 1">
 <meta property="og:description" content="Sample post with multiple images, embedded video ect.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://arthurzucker.github.io/posts/mva/recvis/lesson1/"><meta property="article:section" content="posts">
@@ -23,6 +23,8 @@
 <link rel=stylesheet href=/css/layouts/single.css>
 <link rel=stylesheet href=/css/navigators/sidebar.css>
 <link rel=stylesheet href=/css/style.css>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFYJHY3R2Z"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PFYJHY3R2Z')</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFYJHY3R2Z"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PFYJHY3R2Z',{anonymize_ip:!1})}</script>
 </head>
@@ -62,9 +64,15 @@ Arthur Zucker's Blog</a>
 <i class="fas fa-minus-circle"></i><a class=active href=/posts/mva/>MVA Courses</a>
 <ul class=active>
 <li>
-<i class="fas fa-minus-circle"></i><a class=active href=/posts/mva/rl/>Reinforcement Learning</a>
+<i class="fas fa-minus-circle"></i><a class=active href=/posts/mva/recvis/>Computer Vision & Object Recognition</a>
 <ul class=active>
 <li><a class=active href=/posts/mva/recvis/lesson1/ title="Lesson 1">Lesson 1</a></li>
+</ul>
+</li>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/mva/rl/>Reinforcement Learning</a>
+<ul>
+<li><a href=/posts/mva/rl/lesson1/ title="Lesson 1">Lesson 1</a></li>
 </ul>
 </li>
 </ul>
@@ -89,7 +97,7 @@ Arthur Zucker's Blog</a>
 <p>June 8, 2020</p>
 </div>
 <div class=title>
-<h1>Reinforcement learning, lesson 1</h1>
+<h1>Computer Vision and Object Recognition, lesson 1</h1>
 </div>
 <div class=taxonomy-terms>
 <ul>
@@ -141,19 +149,19 @@ The intuition behind is that its a statistical model of noise! Its not just that
 <a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f" target=_blank>
 <i class="fab fa-facebook"></i>
 </a>
-<a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f&text=Reinforcement%20learning%2c%20lesson%201&via=Arthur%20Zucker%27s%20Blog" target=_blank>
+<a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f&text=Computer%20Vision%20and%20Object%20Recognition%2c%20lesson%201&via=Arthur%20Zucker%27s%20Blog" target=_blank>
 <i class="fab fa-twitter"></i>
 </a>
-<a class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f&title=Reinforcement%20learning%2c%20lesson%201" target=_blank>
+<a class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f&title=Computer%20Vision%20and%20Object%20Recognition%2c%20lesson%201" target=_blank>
 <i class="fab fa-reddit"></i>
 </a>
-<a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f&title=Reinforcement%20learning%2c%20lesson%201" target=_blank>
+<a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f&title=Computer%20Vision%20and%20Object%20Recognition%2c%20lesson%201" target=_blank>
 <i class="fab fa-linkedin"></i>
 </a>
-<a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text=Reinforcement%20learning%2c%20lesson%201 https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f" target=_blank>
+<a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text=Computer%20Vision%20and%20Object%20Recognition%2c%20lesson%201 https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f" target=_blank>
 <i class="fab fa-whatsapp"></i>
 </a>
-<a class="btn btn-sm email-btn" href="mailto:?subject=Reinforcement%20learning%2c%20lesson%201&body=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f" target=_blank>
+<a class="btn btn-sm email-btn" href="mailto:?subject=Computer%20Vision%20and%20Object%20Recognition%2c%20lesson%201&body=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f" target=_blank>
 <i class="fas fa-envelope-open-text"></i>
 </a>
 </div>
@@ -173,9 +181,9 @@ Improve this page
 </a>
 </div>
 <div class="col-md-6 next-article">
-<a href=/posts/projects/ title="Table structure recognition" class="btn btn-outline-info">
+<a href=/posts/mva/rl/lesson1/ title="Reinforcement learning, lesson 1" class="btn btn-outline-info">
 <div>Next <i class="fas fa-chevron-circle-right"></i></div>
-<div class=next-prev-text>Table structure recognition</div>
+<div class=next-prev-text>Reinforcement learning, lesson 1</div>
 </a>
 </div>
 </div>
