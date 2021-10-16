@@ -21,7 +21,7 @@ experiences:
     start: February 2021
     end: August 2021
     responsibilities:
-    - Assess through an state of the art study the different methods to integrate depth in semantic segmentation neural network architectures. 
+    - Assess through a state of the art study the different methods to integrate depth in semantic segmentation neural network architectures. 
     - Implement deformable convolutions in State Of The Art (SOTA) architecture
     - Resolve package issues, and environment problems related to CUDA libraries
     - Conduct an ablation study to measure the effectiveness of the depth deformable convolutions  
