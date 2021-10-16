@@ -1,12 +1,12 @@
 ---
-title: "Reinforcement learning, lesson 1"
+title: "Computer Vision and Object Recognition, lesson 1"
 date: 2020-06-08T08:06:25+06:00 
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
     name: Lesson 1
-    identifier: rl-lesson1
-    parent: rl
+    identifier: recvis-lesson1
+    parent: recvis
     weight: 10
 hero: images/forest.jpg
 tags: ["Markdown","Content Organization","Multi-lingual"]
