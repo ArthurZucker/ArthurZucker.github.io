@@ -33,27 +33,23 @@ degrees:
   institution:
     name: ENS Paris-Saclay
     url: "https://www.master-mva.com/"
-  # grade: #(optional)
+  grade: #(optional)
   #   scale: CGPA
   #   achieved: 3.5
   #   outOf: 4
-  #   enable: false
+     enable: false
   takenCourses: #(optional)
     # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
     showGrades: false
     courses:
     - name: Reinforcement Learning
-      achieved: 3.75
-      outOf: 4
     - name: Computer vision and object recognition 
-      achieved: 3.80
-      outOf: 4
     - name: Deep Learning
-      achieved: 3.5
-      outOf: 4
     - name: Convex optimization and applications in machine learning
-      achieved: 3.75
-      outOf: 4
+    - name: Introduction to medical image analysis 
+    - name: Introduction to numerical image analysis
+    - name: Advanced learning for text and graph data - ALTEGRAD 
+
 
 - name: M.Eng. in Applied Mathematics and Computer Science
   icon: fa-graduation-cap
@@ -61,31 +57,16 @@ degrees:
   institution:
     name: Polytech Sorbonne University
     url: "#"
-  # grade: #(optional)
-  #   scale: CGPA
-  #   achieved: 3.5
-  #   outOf: 4
   takenCourses: #(optional)
     # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
     showGrades: false
     courses:
     - name: Data Structures and Algorithm
-      achieved: 3.75
-      outOf: 4
-    - name: Network Security
-      achieved: 3.80
-      outOf: 4
-    - name: Operating System
-      achieved: 3.5
-      outOf: 4
-    - name: Artificial Intelligent
-      achieved: 3.75
-      outOf: 4
+
   publications: #(optional)
   - title: Automatic table structure recognition 
     url: "#"
   extracurricularActivities: #(optional)
-  - Japanese learning
   - Member of the BDS (student sport association)
   - Volleyball player
 
@@ -95,9 +76,3 @@ degrees:
   institution:
     name: Lycée Lakanal
     url: "#"
-  grade: #(optional)
-    scale: GPA
-    achieved: 15
-    outOf: 20
-  extracurricularActivities: #(optional)
-  - Swimming 

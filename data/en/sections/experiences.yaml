@@ -15,14 +15,14 @@ experiences:
     url: "https://www.safran-group.com/node/4932"
     location: Massy Palaiseau, France
     # company overview
-    overview: SAFRAN is a world renowned company in the sectors of Avionic and Optronic. Famous for manufacturing most of the short and mid-distance plane motors, it's also a leader in Helicopter propulsion systems. 
+    overview: Safran S.A. is a French multinational aircraft engine, rocket engine, aerospace-component and defense corporation. 
   positions:
   - designation: Computer Vision Intern
     start: February 2021
     end: August 2021
     responsibilities:
     - Assess through a state of the art study the different methods to integrate depth in semantic segmentation neural network architectures. 
-    - Implement deformable convolutions in State Of The Art (SOTA) architecture
+    - Implement deformable convolutions in State Of The Art (SOTA) architectures
     - Resolve package issues, and environment problems related to CUDA libraries
     - Conduct an ablation study to measure the effectiveness of the depth deformable convolutions  
 
