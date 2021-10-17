@@ -36,7 +36,7 @@ Edge detector has to find were the edge is (position), its magnitude (strength) 
 
 ## First derivative : 
 
-For 1D functions : Local extremas in first derivative give the location of the edges, while the height gives its strength. 
+For 1D functions : Local extrema in first derivative give the location of the edges, while the height gives its strength. 
 
 For images: partial derivatives are used. 
 
