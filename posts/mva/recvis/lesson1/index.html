@@ -117,7 +117,7 @@ Arthur Zucker's Blog</a>
 <p>In real images, the intensity is noisy and the edges look a bit different from the step function.</p>
 <p>Edge detector has to find were the edge is (position), its magnitude (strength) and its orientation. It also has to be precise. Requirements are linked to performance, resistance to noise etc.</p>
 <h2 id=first-derivative->First derivative :</h2>
-<p>For 1D functions : Local extremas in first derivative give the location of the edges, while the height gives its strength.</p>
+<p>For 1D functions : Local extrema in first derivative give the location of the edges, while the height gives its strength.</p>
 <p>For images: partial derivatives are used.</p>
 <p>Insert images where [x,0] and [0,y] for the gradient. Magnitude is the euclidan norm, and the gradient orientation is the tan-1(dy/dx).</p>
 <p>But images are continuous. We could use finite difference as the discrete gradient => use 4 pixels. Can be implemented as convolution! That&rsquo;s really interesting.</p>
