@@ -27,7 +27,7 @@ projects:
   timeline: "September 2021 "
   repo: https://github.com/younesbelkada/BraTS_2021 # If your project is a public repo on GitHub, then provide this link. it will show star count.
   #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
-  summary: Medical Image Semantic segmentation to detect the presence of a gene sequence. I had to drop this for the time being, but I will go back to it once I have less work.
+  summary: Implements medical image semantic segmentation to detect the presence of a gene sequence. I had to drop this for the time being, but I will go back to it once I have less work.
   tags: ["on-going", "hobby", "computer-vision"]
 
 - name: Hugo Website
@@ -43,7 +43,7 @@ projects:
   role: Developer  
   timeline: "June 2020 - Present"
   url: "/posts/mva/rl/lesson1/"
-  summary: As a memebr of the [Island Bat Research Group]() I am developing a Passive Acoustic Monitoring pipeline based on AI
+  summary: As a member of the [Island Bat Research Group](https://www.batresearch.net/) I am developing a Passive Acoustic Monitoring pipeline based on AI
   tags: ["hobby","portfolio"]
 
 - name: Dynamic Hand Gesture recognition
@@ -51,7 +51,7 @@ projects:
   role: Homework  
   timeline: "5th semester at Polyetch Sorbonne"
   repo: https://github.com/clementapa/Project_Static_and_Dynamic_Hand_Gestures
-  summary: During my M. Eng.'s deep learning class, I tackled deep learning based classification of hand crafted features. This first approach does not use computer vision, and rather relies on handcrafted features.
+  summary: During my M. Eng.'s deep learning class, I tackled deep learning based classification of hand crafted features. This first approach does not use CNNs to extract features, and rather relies on handcrafted features.
   tags: ["academic","deep learning"]
 
 - name: Batch merge and merge sort using CUDA programming
@@ -59,7 +59,7 @@ projects:
   role: Homework  
   timeline: "5th semester at Polyetch Sorbonne"
   repo: https://github.com/ArthurZucker/AdvancedHighPerformanceComputing
-  summary: During my Ms. Eng. deep learning classes, I tackled deep learning based classification of hand crafted features. This first approach does not use computer vision, and rather relies on handcrafted features.
+  summary: This subject was proposed during the High performance Computing class at Polytech Sorbonne. We tackled the implementation of batch merge and merge sort based on a research article. 
   tags: ["academic","HPC","CUDA"]
 
 - name: Finiet Element Method
