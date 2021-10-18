@@ -1,6 +1,6 @@
 <!doctype html><html>
 <head>
-<title>Computer Vision and Object Recognition, lesson 1</title>
+<title>Reinforcement learning, lesson 2</title>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="ie=edge">
@@ -12,12 +12,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css>
 <link rel=icon type=image/png href=/images/site/favicon3_hu62e62282d1df9a6f522c194700ff0a75_33785_42x0_resize_box_3.png>
-<meta property="og:title" content="Computer Vision and Object Recognition, lesson 1">
+<meta property="og:title" content="Reinforcement learning, lesson 2">
 <meta property="og:description" content="Sample post with multiple images, embedded video ect.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://arthurzucker.github.io/posts/mva/recvis/lesson1/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-06-08T08:06:25+06:00">
-<meta property="article:modified_time" content="2020-06-08T08:06:25+06:00">
+<meta property="og:url" content="https://arthurzucker.github.io/posts/mva/rl/lesson2/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-10-18T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-10-18T00:00:00+00:00">
 <meta name=description content="Sample post with multiple images, embedded video ect.">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css>
 <link rel=stylesheet href=/css/layouts/single.css>
@@ -62,16 +62,16 @@ Arthur Zucker's Blog</a>
 <i class="fas fa-minus-circle"></i><a class=active href=/posts/mva/>MVA Courses</a>
 <ul class=active>
 <li>
-<i class="fas fa-minus-circle"></i><a class=active href=/posts/mva/recvis/>Computer Vision & Object Recognition</a>
-<ul class=active>
-<li><a class=active href=/posts/mva/recvis/lesson1/ title="Lesson 1">Lesson 1</a></li>
+<i class="fas fa-plus-circle"></i><a href=/posts/mva/recvis/>Computer Vision & Object Recognition</a>
+<ul>
+<li><a href=/posts/mva/recvis/lesson1/ title="Lesson 1">Lesson 1</a></li>
 </ul>
 </li>
 <li>
-<i class="fas fa-plus-circle"></i><a href=/posts/mva/rl/>Reinforcement Learning</a>
-<ul>
+<i class="fas fa-minus-circle"></i><a class=active href=/posts/mva/rl/>Reinforcement Learning</a>
+<ul class=active>
 <li><a href=/posts/mva/rl/lesson1/ title="Lesson 1">Lesson 1</a></li>
-<li><a href=/posts/mva/rl/lesson2/ title="Lesson 2">Lesson 2</a></li>
+<li><a class=active href=/posts/mva/rl/lesson2/ title="Lesson 2">Lesson 2</a></li>
 </ul>
 </li>
 </ul>
@@ -86,85 +86,56 @@ Arthur Zucker's Blog</a>
 <section class=content-section id=content-section>
 <div class=content>
 <div class="container p-0 read-area">
-<div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://arthurzucker.github.io/images/default-hero.jpg)>
+<div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://arthurzucker.github.io/posts/mva/rl/lesson2/images/path.png)>
 </div>
 <div class=page-content>
 <div class="author-profile ml-auto align-self-lg-center">
 <img class=rounded-circle src=/images/author/me_hue0c31f5a221a4dac786736a317c9bf63_45873_120x120_fit_q75_box.jpg alt="Author Image">
 <h5 class=author-name>Arthur Zucker</h5>
-<p>June 8, 2020</p>
+<p>October 18, 2021</p>
 </div>
 <div class=title>
-<h1>Computer Vision and Object Recognition, lesson 1</h1>
+<h1>Reinforcement learning, lesson 2</h1>
 </div>
 <div class=taxonomy-terms>
 <ul>
-<li class=rounded><a href=/tags/markdown class="btn, btn-sm">Markdown</a></li>
-<li class=rounded><a href=/tags/content-organization class="btn, btn-sm">Content Organization</a></li>
-<li class=rounded><a href=/tags/multi-lingual class="btn, btn-sm">Multi-lingual</a></li>
+<li class=rounded><a href=/tags/mva class="btn, btn-sm">MVA</a></li>
+<li class=rounded><a href=/tags/reinforcement-learning class="btn, btn-sm">Reinforcement Learning</a></li>
+<li class=rounded><a href=/tags/english class="btn, btn-sm">English</a></li>
 </ul>
 </div>
 <div class=post-content id=post-content>
+<p>This post sums up the content of the lesson n°2 of RL on dynamic programming</p>
+<hr>
 <style>r{color:Red}o{color:Orange}g{color:Green}b{color:Blue}</style>
-<p>What is an edge? It describe a rapid changes in image intensity. 4 discontinuities can create those :</p>
-<ul>
-<li>Surface NOrmal ??</li>
-<li>Depth discontinuity</li>
-<li>Surface Reflectance</li>
-<li>Illumination discontinuity.</li>
-</ul>
-<p>Intensity profiles in the image vary. It can look like a step function, roof edge or line edges. Step is mostly used, given that it is the simplest.</p>
-<p>In real images, the intensity is noisy and the edges look a bit different from the step function.</p>
-<p>Edge detector has to find were the edge is (position), its magnitude (strength) and its orientation. It also has to be precise. Requirements are linked to performance, resistance to noise etc.</p>
-<h2 id=first-derivative->First derivative :</h2>
-<p>For 1D functions : Local extrema in first derivative give the location of the edges, while the height gives its strength.</p>
-<p>For images: partial derivatives are used.</p>
-<p>Insert images where [x,0] and [0,y] for the gradient. Magnitude is the euclidan norm, and the gradient orientation is the tan-1(dy/dx).</p>
-<p>But images are continuous. We could use finite difference as the discrete gradient => use 4 pixels. Can be implemented as convolution! That&rsquo;s really interesting.</p>
-<p>| &mdash;&ndash; | &mdash; |
-| -1 | 1 |
-| -1 | 1 |</p>
-<p>Various gradient operators, what does the size changes?
-Small = sensible to noise, but very good localization (what does it mean? how does it localize???).
-Bigger give better detection, les sensible to noise, but take into account things that might be useless.</p>
-<p>Insert python code to compare various sobel filters?</p>
-<p>The value returned is real, you then need to threshold.
-Standard threshold vq hysteresis : if magnitude is between 2 threshold, compare with neighboring pixel.</p>
-<p>But edges have to be grouped.</p>
-<h2 id=second-derivative->Second derivative :</h2>
-<p>Here, zero-crossing indicates the presence of edges. You have to detect those. The lablacian operator has to be used in that case. But it doesn&rsquo;t provide the orientation of the edges.</p>
-<p>We have to use at least 3 pixels for each directions. It can again be implemented as a convolution. We have to take into account the orientation, and the distance that is bigger for diagonal values.</p>
-<p>Negative values in the image were mapped to 128. Less will be between those two values.</p>
-<h2 id=supress-noise>Supress noise</h2>
-<p>Gaussian smoothing! Convolve the signal with the gaussian.
-The intuition behind is that its a statistical model of noise! Its not just that &ldquo;it works&rdquo;.</p>
-<p>Taking the derivative of the gaussian then convolving saves 1 operation.</p>
-<p>It works the same with the laplacian. Laplacian of Gaussian, then convolve it.</p>
+<h2 id=example>Example</h2>
+<p>Let&rsquo;s apply the notions to a simple example. Let&rsquo;s consider the following model :</p>
+<img src=images/example_mdp1.png alt="Example of a markov decision process" class=center>
 </div>
 <div class="row pl-3 pr-3">
 <div class="col-md-6 share-buttons">
 <strong>Share on:</strong>
-<a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f" target=_blank>
+<a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson2%2f" target=_blank>
 <i class="fab fa-facebook"></i>
 </a>
-<a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f&text=Computer%20Vision%20and%20Object%20Recognition%2c%20lesson%201&via=Arthur%20Zucker%27s%20Blog" target=_blank>
+<a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson2%2f&text=Reinforcement%20learning%2c%20lesson%202&via=Arthur%20Zucker%27s%20Blog" target=_blank>
 <i class="fab fa-twitter"></i>
 </a>
-<a class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f&title=Computer%20Vision%20and%20Object%20Recognition%2c%20lesson%201" target=_blank>
+<a class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson2%2f&title=Reinforcement%20learning%2c%20lesson%202" target=_blank>
 <i class="fab fa-reddit"></i>
 </a>
-<a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f&title=Computer%20Vision%20and%20Object%20Recognition%2c%20lesson%201" target=_blank>
+<a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson2%2f&title=Reinforcement%20learning%2c%20lesson%202" target=_blank>
 <i class="fab fa-linkedin"></i>
 </a>
-<a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text=Computer%20Vision%20and%20Object%20Recognition%2c%20lesson%201 https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f" target=_blank>
+<a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text=Reinforcement%20learning%2c%20lesson%202 https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson2%2f" target=_blank>
 <i class="fab fa-whatsapp"></i>
 </a>
-<a class="btn btn-sm email-btn" href="mailto:?subject=Computer%20Vision%20and%20Object%20Recognition%2c%20lesson%201&body=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frecvis%2flesson1%2f" target=_blank>
+<a class="btn btn-sm email-btn" href="mailto:?subject=Reinforcement%20learning%2c%20lesson%202&body=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson2%2f" target=_blank>
 <i class="fas fa-envelope-open-text"></i>
 </a>
 </div>
 <div class="col-md-6 btn-improve-page">
-<a href=https://github.com/ArthurZucker/ArthurZucker.github.io/edit/main/content/posts/MVA/recvis/lesson1/index.md title="Improve this page" target=_blank rel=noopener>
+<a href=https://github.com/ArthurZucker/ArthurZucker.github.io/edit/main/content/posts/MVA/RL/lesson2/index.md title="Improve this page" target=_blank rel=noopener>
 <i class="fas fa-code-branch"></i>
 Improve this page
 </a>
@@ -173,15 +144,15 @@ Improve this page
 <hr>
 <div class="row next-prev-navigator">
 <div class="col-md-6 previous-article">
-<a href=/posts/introduction/ title=Introduction class="btn btn-outline-info">
+<a href=/posts/mva/rl/lesson1/ title="Reinforcement learning, lesson 1" class="btn btn-outline-info">
 <div><i class="fas fa-chevron-circle-left"></i> Prev</div>
-<div class=next-prev-text>Introduction</div>
+<div class=next-prev-text>Reinforcement learning, lesson 1</div>
 </a>
 </div>
 <div class="col-md-6 next-article">
-<a href=/posts/mva/rl/lesson1/ title="Reinforcement learning, lesson 1" class="btn btn-outline-info">
+<a href=/posts/projects/ title="Table structure recognition" class="btn btn-outline-info">
 <div>Next <i class="fas fa-chevron-circle-right"></i></div>
-<div class=next-prev-text>Reinforcement learning, lesson 1</div>
+<div class=next-prev-text>Table structure recognition</div>
 </a>
 </div>
 </div>
@@ -198,9 +169,7 @@ Improve this page
 <div class=toc>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#first-derivative->First derivative :</a></li>
-<li><a href=#second-derivative->Second derivative :</a></li>
-<li><a href=#supress-noise>Supress noise</a></li>
+<li><a href=#example>Example</a></li>
 </ul>
 </nav>
 </div>

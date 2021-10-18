@@ -16,8 +16,8 @@
 <meta property="og:description" content="Sample post with multiple images, embedded video ect.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://arthurzucker.github.io/posts/mva/rl/lesson1/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-06-08T08:06:25+06:00">
-<meta property="article:modified_time" content="2020-06-08T08:06:25+06:00">
+<meta property="article:published_time" content="2021-10-18T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-10-18T00:00:00+00:00">
 <meta name=description content="Sample post with multiple images, embedded video ect.">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css>
 <link rel=stylesheet href=/css/layouts/single.css>
@@ -71,12 +71,12 @@ Arthur Zucker's Blog</a>
 <i class="fas fa-minus-circle"></i><a class=active href=/posts/mva/rl/>Reinforcement Learning</a>
 <ul class=active>
 <li><a class=active href=/posts/mva/rl/lesson1/ title="Lesson 1">Lesson 1</a></li>
+<li><a href=/posts/mva/rl/lesson2/ title="Lesson 2">Lesson 2</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a href=/posts/projects/ title="Markdown Sample">Markdown Sample</a></li>
-<li><a href=/posts/flying-foxes-study/ title="Shortcodes Sample">Shortcodes Sample</a></li>
 </div>
 </ul>
 </div>
@@ -92,16 +92,16 @@ Arthur Zucker's Blog</a>
 <div class="author-profile ml-auto align-self-lg-center">
 <img class=rounded-circle src=/images/author/me_hue0c31f5a221a4dac786736a317c9bf63_45873_120x120_fit_q75_box.jpg alt="Author Image">
 <h5 class=author-name>Arthur Zucker</h5>
-<p>June 8, 2020</p>
+<p>October 18, 2021</p>
 </div>
 <div class=title>
 <h1>Reinforcement learning, lesson 1</h1>
 </div>
 <div class=taxonomy-terms>
 <ul>
-<li class=rounded><a href=/tags/markdown class="btn, btn-sm">Markdown</a></li>
-<li class=rounded><a href=/tags/content-organization class="btn, btn-sm">Content Organization</a></li>
-<li class=rounded><a href=/tags/multi-lingual class="btn, btn-sm">Multi-lingual</a></li>
+<li class=rounded><a href=/tags/mva class="btn, btn-sm">MVA</a></li>
+<li class=rounded><a href=/tags/reinforcement-learning class="btn, btn-sm">Reinforcement Learning</a></li>
+<li class=rounded><a href=/tags/english class="btn, btn-sm">English</a></li>
 </ul>
 </div>
 <div class=post-content id=post-content>
@@ -160,8 +160,11 @@ Arthur Zucker's Blog</a>
 <ul>
 <li>Deterministic, given the same set of state $S$, the action $a\in A$ will be chosen</li>
 <li>Stochastic, a probability distribution over the actions determines $a$.</li>
-<li>History-dependant</li>
-<li>Markov (relies on the previous state)</li>
+</ul>
+<p>Then, it can also be :</p>
+<ul>
+<li>( stochastic / deterministic ) History-dependant</li>
+<li>( stochastic / deterministic ) Markov (relies on the previous state)</li>
 </ul>
 </strong>
 </div>
@@ -175,25 +178,24 @@ Arthur Zucker's Blog</a>
 </div>
 <p>At each round t, an agent following the policy $\pi$ selects the actions $a_t \sim d_t(s_t)$ .</p>
 <h3 id=markov-chain-of-a-policy>Markov chain of a policy</h3>
-<p>A stationary policy defines a Markov chain on a random process! Why? Well the transition probability of a random process $(s_t)_{t \in \mathbb{N}}$ with regards to a stationary policy $\pi$ is the following :</p>
-<p>$$ P^\pi (s'\mid s) = \mathbb{P}(s_{t+1}=s' \mid s_t = s, \pi) $$</p>
+<p>The transition probability of a random process $(s_t)_{t \in \mathbb{N}}$ with regards to a stationary policy $\pi$ is the following :</p>
+<p>$$ p^\pi (s'\mid s) = \mathbb{P}(s_{t+1}=s' \mid s_t = s, \pi) $$</p>
 <p>Every actions in $A$ (even if it does not take the state from $s$ to $s'$) has to be taken into account. Thus we deduce that $$ p^\pi (s'\mid s) = \sum_{a\in A} \pi(s,a)p(s'\mid s,a) $$</p>
 <h2 id=3-optimality-principle>3. Optimality Principle</h2>
-<p>This part answers the question of how good is a policy, and how do we measure this.</p>
-<h3 id=state-value-function>State value function</h3>
+<p>How do we evaluate a policy ?</p>
+<h3 id=-state-value-function>📝 State value function</h3>
 <p>The state value function allows us to determine the effectiveness of a policy. Various definitions can be used depending on the problem at hand. For the following definitions, let $\pi = (d_1, d_2, &mldr;,)$ be a deterministic policy.</p>
 <div style=padding-left:30px>
 🎲 The <g>Finite time horizon T</g> policy, sets a deadline $T$, at which the sum of the rewards up to $T$ will be computed. The value function can be expressed as :
 <p>$$ V^\pi(t,s) = \mathbb{E}\left[ \sum_{\tau = t}^{T-1} r(s_\tau,d_\tau(h_\tau)) + R(s_T) \mid s_t = s; \pi = (d_1, d_2, &mldr;,) \right ]$$</p>
-<p>Here, where $R$ is a value function for the final state. This mathematical formula simply expresses the fact that the state value function $V$, for a certain policy $\pi$, a time $t$ which will be the the &ldquo;beginning&rdquo; of the computation, and a state $s$ such that at time $t$, the system is in the state $s$, is equal to the Expectation of the sum of the rewards obtained taking actions according ot the policy, and receiving the corresponding rewards. We have to take into account the Expectation because the decision process can be stochastic, and thus the Expectation gives the equivalent of the mean rewards in a stochastic model.<br>
+<p>Here, where $R$ is a value function for the final state. Here we compute the expectation of the sum of the rewards obtained taking actions according to the policy, and receiving the corresponding rewards. We have to take into account the Expectation because the decision process can be stochastic, and thus the Expectation gives the equivalent of the mean rewards in a stochastic model.<br>
 $\qquad$📝 It is usually used when there is a deadline to meet.</p>
 </div>
 <div style=padding-left:30px>
 🎲 The <g> Infinite Time Horizon with discount </g> translates a problem that never terminates. Rewards closer in time receive a higher importance :
 <p>$$ V^{\pi}\left(s\right)\ =\ \mathbb{E}\left[\sum_{t=0}^{\infty}\gamma^tr\left(s_t,d_t\left(h_t\right)\right)\ \mid s_{0\ }=s;\pi \right] $$</p>
-<p>where $0\leq\gamma&lt;1$ is the <em>discount</em> factor. If it&rsquo;s small, the value function focusses on short-term reward, if it&rsquo;s big, on long term reward.
-This series always converges <br>
-$\qquad$📝 We implement it when there is uncertainty about the deadline, or intrinsic definition of discount ?????? @TODO give examples</p>
+<p>where $0\leq\gamma&lt;1$ is the <em>discount</em> factor.<br>
+$\qquad$📝 We implement it when there is uncertainty about the deadline, or intrinsic definition of discount</p>
 </div>
 <div style=padding-left:30px>
 🎲 The <g> Stochastic shortest path </g>, the problem never terminates but the agent will reach a termination state.
@@ -257,9 +259,9 @@ Improve this page
 </a>
 </div>
 <div class="col-md-6 next-article">
-<a href=/posts/projects/ title="Table structure recognition" class="btn btn-outline-info">
+<a href=/posts/mva/rl/lesson2/ title="Reinforcement learning, lesson 2" class="btn btn-outline-info">
 <div>Next <i class="fas fa-chevron-circle-right"></i></div>
-<div class=next-prev-text>Table structure recognition</div>
+<div class=next-prev-text>Reinforcement learning, lesson 2</div>
 </a>
 </div>
 </div>
@@ -299,7 +301,7 @@ Improve this page
 </li>
 <li><a href=#3-optimality-principle>3. Optimality Principle</a>
 <ul>
-<li><a href=#state-value-function>State value function</a></li>
+<li><a href=#-state-value-function>📝 State value function</a></li>
 </ul>
 </li>
 </ul>
