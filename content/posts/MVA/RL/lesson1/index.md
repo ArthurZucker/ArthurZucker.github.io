@@ -1,6 +1,6 @@
 ---
 title: "Reinforcement learning, lesson 1"
-date: 2020-06-08T08:06:25+06:00 
+date: 2021-10-18
 description: Sample post with multiple images, embedded video ect.
 menu:
   sidebar:
@@ -9,7 +9,7 @@ menu:
     parent: rl
     weight: 10
 hero: images/forest.jpg
-tags: ["Markdown","Content Organization","Multi-lingual"]
+tags: ["MVA","Reinforcement Learning","English"]
 categories: ["Basic"]
 math: true
 summary: "How to model an RL problem: Markov Decision Processes "
@@ -108,8 +108,10 @@ A Markov Decision Process is a tool, to model decision making when outcomes can 
 
 - Deterministic, given the same set of state $S$, the action $a\in A$ will be chosen
 - Stochastic, a probability distribution over the actions determines $a$.  
-- History-dependant 
-- Markov (relies on the previous state)
+
+Then, it can also be : 
+-  ( stochastic / deterministic ) History-dependant 
+-  ( stochastic / deterministic ) Markov (relies on the previous state)
 {{< /alert >}} 
 
 {{< alert type="success" >}}
@@ -123,17 +125,17 @@ At each round t, an agent following the policy $\pi$ selects the actions $a_t \s
 
 ### Markov chain of a policy 
 
-A stationary policy defines a Markov chain on a random process! Why?  Well the transition probability of a random process $(s_t)_{t \in \mathbb{N}}$ with regards to a stationary policy $\pi$ is the following : 
+The transition probability of a random process $(s_t)_{t \in \mathbb{N}}$ with regards to a stationary policy $\pi$ is the following : 
 
-$$ P^\pi (s'\mid s) = \mathbb{P}(s_{t+1}=s' \mid s_t = s, \pi) $$  
+$$ p^\pi (s'\mid s) = \mathbb{P}(s_{t+1}=s' \mid s_t = s, \pi) $$  
 
 Every actions in $A$ (even if it does not take the state from $s$ to $s'$) has to be taken into account. Thus we deduce that $$ p^\pi (s'\mid s) = \sum_{a\in A} \pi(s,a)p(s'\mid s,a) $$
 
 ## 3. Optimality Principle
 
-This part answers the question of how good is a policy, and how do we measure this.
+How do we evaluate a policy ? 
 
-### State value function 
+### :memo: State value function 
 
 The state value function allows us to determine the effectiveness of a policy. Various definitions can be used depending on the problem at hand. For the following definitions, let $\pi = (d_1, d_2, ...,)$ be a deterministic policy. 
 
@@ -143,7 +145,7 @@ The state value function allows us to determine the effectiveness of a policy. V
 
 $$ V^\pi(t,s) = \mathbb{E}\left[ \sum_{\tau = t}^{T-1} r(s_\tau,d_\tau(h_\tau)) + R(s_T) \mid s_t = s; \pi = (d_1, d_2, ...,) \right ]$$
 
-Here, where $R$ is a value function for the final state. This mathematical formula simply expresses the fact that the state value function $V$, for a certain policy $\pi$, a time $t$ which will be the the "beginning" of the computation, and a state $s$ such that at time $t$, the system is in the state $s$, is equal to the Expectation of the sum of the rewards obtained taking actions according ot the policy, and receiving the corresponding rewards. We have to take into account the Expectation because the decision process can be stochastic, and thus the Expectation gives the equivalent of the mean rewards in a stochastic model. \
+Here, where $R$ is a value function for the final state. Here we compute the expectation of the sum of the rewards obtained taking actions according to the policy, and receiving the corresponding rewards. We have to take into account the Expectation because the decision process can be stochastic, and thus the Expectation gives the equivalent of the mean rewards in a stochastic model. \
 $\qquad$:memo: It is usually used when there is a deadline to meet. 
 </div>
 
@@ -153,9 +155,8 @@ $\qquad$:memo: It is usually used when there is a deadline to meet.
 
 $$ V^{\pi}\left(s\right)\ =\ \mathbb{E}\left[\sum_{t=0}^{\infty}\gamma^tr\left(s_t,d_t\left(h_t\right)\right)\ \mid s_{0\ }=s;\pi \right] $$
 
-where $0\leq\gamma<1$ is the *discount* factor. If it's small, the value function focusses on short-term reward, if it's big, on long term reward. 
-This series always converges  \
-$\qquad$:memo: We implement it when there is uncertainty about the deadline, or intrinsic definition of discount ?????? @TODO give examples 
+where $0\leq\gamma<1$ is the *discount* factor. \
+$\qquad$:memo: We implement it when there is uncertainty about the deadline, or intrinsic definition of discount
 </div>
 
 
@@ -178,5 +179,10 @@ $$V^{\pi}\left(s\right)\ =\ \lim_{T\to\infty}\ \mathbb{E}\left[\frac{1}{T}\sum_{
 $T_{\pi}$ : first random time when the termination state is achieved.   \
 $\qquad$:memo: Used when the system should be constantly controlled over tim
 </div>
+
+
+
+
+
 
 
