@@ -141,11 +141,14 @@ Standard threshold vq hysteresis : if magnitude is between 2 threshold, compare 
 <p>Here, zero-crossing indicates the presence of edges. You have to detect those. The lablacian operator has to be used in that case. But it doesn&rsquo;t provide the orientation of the edges.</p>
 <p>We have to use at least 3 pixels for each directions. It can again be implemented as a convolution. We have to take into account the orientation, and the distance that is bigger for diagonal values.</p>
 <p>Negative values in the image were mapped to 128. Less will be between those two values.</p>
-<h2 id=supress-noise>Supress noise</h2>
+<h2 id=suppress-noise>Suppress noise</h2>
 <p>Gaussian smoothing! Convolve the signal with the gaussian.
 The intuition behind is that its a statistical model of noise! Its not just that &ldquo;it works&rdquo;.</p>
 <p>Taking the derivative of the gaussian then convolving saves 1 operation.</p>
 <p>It works the same with the laplacian. Laplacian of Gaussian, then convolve it.</p>
+<p>Both operators have pros and cons, but canny edge detectors use the best of both.</p>
+<h2 id=canny->Canny :</h2>
+<p>Smooth image with Gaussian. Then Sobel to compute the gradient. Compute magnitude and orientation. Then Apply laplacian along the direction, 1d laplacian. THen zero crossing ot detect an edge.</p>
 </div>
 <div class="row pl-3 pr-3">
 <div class="col-md-6 share-buttons">
@@ -206,7 +209,8 @@ Improve this page
 <ul>
 <li><a href=#first-derivative->First derivative :</a></li>
 <li><a href=#second-derivative->Second derivative :</a></li>
-<li><a href=#supress-noise>Supress noise</a></li>
+<li><a href=#suppress-noise>Suppress noise</a></li>
+<li><a href=#canny->Canny :</a></li>
 </ul>
 </nav>
 </div>
