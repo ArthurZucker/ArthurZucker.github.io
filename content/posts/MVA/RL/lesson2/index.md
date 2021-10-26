@@ -16,7 +16,6 @@ summary: "How to model an RL problem: Dynamic programming "
 ---
 This post sums up the content of the lesson n°2 of RL on dynamic programming
 
-
 ---
 
 <style>

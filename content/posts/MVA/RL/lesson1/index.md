@@ -181,7 +181,13 @@ $\qquad$:memo: Used when the system should be constantly controlled over tim
 </div>
 
 
+### Optimization problem :
 
+{{< alert type="success" >}}
+<g>Definition : </g>The solution to an MDP is an optimal policy $\pi^*$ satisfying $\pi^* \in \underset{\pi \in \Pi}{\text{argmax }} V^\pi$
+{{< /alert >}} 
+
+The value function under that policy is the optimal value function : $V^* = V^{\pi^*}$
 
 
 

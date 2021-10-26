@@ -68,10 +68,15 @@ We have to use at least 3 pixels for each directions. It can again be implemente
 
 Negative values in the image were mapped to 128. Less will be between those two values. 
 
-## Supress noise
+## Suppress noise
 Gaussian smoothing! Convolve the signal with the gaussian.
 The intuition behind is that its a statistical model of noise! Its not just that "it works". 
 
 Taking the derivative of the gaussian then convolving saves 1 operation. 
 
 It works the same with the laplacian. Laplacian of Gaussian, then convolve it. 
+
+Both operators have pros and cons, but canny edge detectors use the best of both. 
+
+## Canny : 
+Smooth image with Gaussian. Then Sobel to compute the gradient. Compute magnitude and orientation. Then Apply laplacian along the direction, 1d laplacian. THen zero crossing ot detect an edge. 
