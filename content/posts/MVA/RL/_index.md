@@ -5,5 +5,5 @@ menu:
     name: Reinforcement Learning
     identifier: rl
     parent: mva-courses
-    weight: 10
+    weight: 60
 ---

@@ -7,7 +7,7 @@ menu:
     name: Lesson 2
     identifier: rl-lesson2
     parent: rl
-    weight: 10
+    weight: 60
 hero: images/path.png
 tags: ["MVA","Reinforcement Learning","English"]
 categories: ["Basic"]
@@ -25,9 +25,53 @@ g { color: Green }
 b { color: Blue }
 </style>
 
+The problem we have to solve is the following : 
+$$
+\begin{align*}
+\max _{\pi} V^{\pi}\left(s_{0}\right)= & \\
+= & \max _{\pi} \mathbb{E}\left[r\left(s_{0}, d_{0}\left(a_{0} \mid s_{0}\right)\right)+\gamma r\left(s_{1}, d_{1}\left(a_{1} \mid s_{0}, s_{1}\right)\right)+\gamma^{2} r\left(s_{2}, d_{2}\left(a_{2} \mid s_{0}, s_{1}, s_{2}\right)\right)+\ldots\right] \\
+=&\mathbb{E}\left[\sum_{t=0}^{\infty} \gamma^{t} r\left(s_{t}, a_{t}\right) \mid a_{t} \sim d_{t}\left(\cdot \mid h_{t}\right)\right]
+\end{align*}
+$$
+
+## Reducing the search space :
+
+### History based to markov decision 
+
+{{< alert type="danger" >}}
+Theorem (Bertsekas [2007])
+
+Consider an MDP with $|A|<\infty$ and an initial distribution $\beta$ over states such that $|\{s \in S: \beta(s)>0\}|<\infty .$ For any policy $\pi$, let
+$$
+p_{t}^{\pi}(s, a)=\mathbb{P}\left[S_{t}=s, A_{t}=a\right] ; \quad p_{t}^{\pi}(s)=\mathbb{P}\left[S_{t}=s\right]
+$$
+Then for any history-based policy $\pi$ there exists a Markov policy $\bar{\pi}$ such that
+$$
+p_{t}^{\bar{\pi}}(s, a)=p_{t}^{\pi}(s, a) ; \quad p_{t}^{\bar{\pi}}(s)=p_{t}^{\pi}(s)
+$$
+for any $s \in S, a \in A$ and $t \in \mathbb{N}^{+}$
+{{< /alert >}}
+
+Introduced the Discounted Occupancy measure but I don't know why. 
+
+### Non-stationary to stationary 
+
+{{< alert type="danger" >}}
+Theorem (Bertsekas [2007])
+Consider an MDP with $|A|<\infty$ and an initial distribution $\beta$ over states such that $|\{s \in S: \beta(s)>0\}|<\infty$
+Then for any non-stationary policy $\pi$ there exists a stationary policy $\bar{\pi}$ such that
+$$
+\rho_{\gamma}^{\bar{\pi}}(s, a)=\rho_{\gamma}^{\pi}(s, a) ; \quad \rho_{\gamma}^{\bar{\pi}}(s)=\rho_{\gamma}^{\pi}(s)
+$$
+for any $s \in S, a \in A$ and $t \in \mathbb{N}^{+}$
+{{< /alert >}}
+
+## Simplifying the value function 
+
+## From stochastic to deterministic decision rules
 
 
-
+Conclusion: we can now focus on stationary policies with deterministic markov decision rules. 
 <!-- Started with a recap, but most of what was supposed to be a recap, was kinda new since I did not have time to go back on it. 
 
 - always exists a deterministic markov stationary optimal policy. (mapping between state and action is deterministic). This allows to reduce the size of search. 

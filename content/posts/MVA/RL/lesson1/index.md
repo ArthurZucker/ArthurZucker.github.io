@@ -7,7 +7,7 @@ menu:
     name: Lesson 1
     identifier: rl-lesson1
     parent: rl
-    weight: 10
+    weight: 60
 hero: images/forest.jpg
 tags: ["MVA","Reinforcement Learning","English"]
 categories: ["Basic"]
