@@ -1,7 +1,7 @@
 baseURL: https://arthurzucker.github.io
 
 languageCode: en-us
-title: "Arthur Zucker's Blog"
+title: "Arthur Zucker's Portfolio"
 theme: "toha"
 
 # Manage languages
@@ -79,7 +79,7 @@ params:
 
     # Enable & configure "Notes" features
     notes:
-      enable: true
+      enable: false
 
   # specify whether you want to show Table of Contents in reading page
   enableTOC: true

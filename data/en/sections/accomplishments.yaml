@@ -20,5 +20,12 @@ accomplishments:
 "
   certificateURL: "https://coursera.org/share/8ceb83275bc211ff20cb033f6e690a34"
 
+- name: Major of promotion
+  timeline: "sep 2019 - sep 2021"
+  organization:
+    name: Polytech Sorbonne
+    url: https://www.polytech.sorbonne-universite.fr/formations/mathematiques-appliques-et-informatique
+  courseOverview: "Graduated as major of the 5th MAIN (Applied Mathematics and Computer Science) promotion of my engineering school"
+
 
 
