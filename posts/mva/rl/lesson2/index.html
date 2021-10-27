@@ -35,7 +35,7 @@
 </button>
 <a class=navbar-brand href=/>
 <img src=/images/site/favicon3_hu62e62282d1df9a6f522c194700ff0a75_33785_42x0_resize_box_3.png alt=Logo>
-Arthur Zucker's Blog</a>
+Arthur Zucker's Portfolio</a>
 <button class="navbar-toggler navbar-light" id=toc-toggler type=button onclick=toggleTOC()>
 <span class=navbar-toggler-icon></span>
 </button>
@@ -57,7 +57,25 @@ Arthur Zucker's Blog</a>
 <ul class=tree id=tree>
 <li id=list-heading><a href=/posts data-filter=all>Posts</a></li>
 <div class=subtree>
-<li><a href=/posts/introduction/ title=Introduction>Introduction</a></li>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/flying-foxes-study/>Passive Acoustic Monitoring Using AI</a>
+<ul>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/flying-foxes-study/ai/>Deep Learning pipeline</a>
+<ul>
+<li><a href=/posts/flying-foxes-study/ai/aed/ title="Audio Event Detection">Audio Event Detection</a></li>
+<li><a href=/posts/flying-foxes-study/ai/speaker/ title="Speaker Recognition">Speaker Recognition</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/projects/>Projects</a>
+<ul>
+<li><a href=/posts/projects/safran/ title="Semantic Segmentation for cars">Semantic Segmentation for cars</a></li>
+<li><a href=/posts/projects/clusti/ title="Table Structure Recognition">Table Structure Recognition</a></li>
+</ul>
+</li>
 <li>
 <i class="fas fa-minus-circle"></i><a class=active href=/posts/mva/>MVA Courses</a>
 <ul class=active>
@@ -82,7 +100,6 @@ Arthur Zucker's Blog</a>
 </li>
 </ul>
 </li>
-<li><a href=/posts/projects/ title="Markdown Sample">Markdown Sample</a></li>
 </div>
 </ul>
 </div>
@@ -114,6 +131,43 @@ Arthur Zucker's Blog</a>
 <p>This post sums up the content of the lesson n°2 of RL on dynamic programming</p>
 <hr>
 <style>r{color:Red}o{color:Orange}g{color:Green}b{color:Blue}</style>
+<p>The problem we have to solve is the following :
+$$
+\begin{align*}
+\max _{\pi} V^{\pi}\left(s_{0}\right)= & \<br>
+= & \max _{\pi} \mathbb{E}\left[r\left(s_{0}, d_{0}\left(a_{0} \mid s_{0}\right)\right)+\gamma r\left(s_{1}, d_{1}\left(a_{1} \mid s_{0}, s_{1}\right)\right)+\gamma^{2} r\left(s_{2}, d_{2}\left(a_{2} \mid s_{0}, s_{1}, s_{2}\right)\right)+\ldots\right] \<br>
+=&\mathbb{E}\left[\sum_{t=0}^{\infty} \gamma^{t} r\left(s_{t}, a_{t}\right) \mid a_{t} \sim d_{t}\left(\cdot \mid h_{t}\right)\right]
+\end{align*}
+$$</p>
+<h2 id=reducing-the-search-space->Reducing the search space :</h2>
+<h3 id=history-based-to-markov-decision>History based to markov decision</h3>
+<div class="alert alert-danger">
+<strong><p>Theorem (Bertsekas [2007])</p>
+<p>Consider an MDP with $|A|&lt;\infty$ and an initial distribution $\beta$ over states such that $|{s \in S: \beta(s)>0}|&lt;\infty .$ For any policy $\pi$, let
+$$
+p_{t}^{\pi}(s, a)=\mathbb{P}\left[S_{t}=s, A_{t}=a\right] ; \quad p_{t}^{\pi}(s)=\mathbb{P}\left[S_{t}=s\right]
+$$
+Then for any history-based policy $\pi$ there exists a Markov policy $\bar{\pi}$ such that
+$$
+p_{t}^{\bar{\pi}}(s, a)=p_{t}^{\pi}(s, a) ; \quad p_{t}^{\bar{\pi}}(s)=p_{t}^{\pi}(s)
+$$
+for any $s \in S, a \in A$ and $t \in \mathbb{N}^{+}$</p>
+</strong>
+</div>
+<p>Introduced the Discounted Occupancy measure but I don&rsquo;t know why.</p>
+<h3 id=non-stationary-to-stationary>Non-stationary to stationary</h3>
+<div class="alert alert-danger">
+<strong>Theorem (Bertsekas [2007])
+Consider an MDP with $|A|&lt;\infty$ and an initial distribution $\beta$ over states such that $|{s \in S: \beta(s)>0}|&lt;\infty$
+Then for any non-stationary policy $\pi$ there exists a stationary policy $\bar{\pi}$ such that
+$$
+\rho_{\gamma}^{\bar{\pi}}(s, a)=\rho_{\gamma}^{\pi}(s, a) ; \quad \rho_{\gamma}^{\bar{\pi}}(s)=\rho_{\gamma}^{\pi}(s)
+$$
+for any $s \in S, a \in A$ and $t \in \mathbb{N}^{+}$</strong>
+</div>
+<h2 id=simplifying-the-value-function>Simplifying the value function</h2>
+<h2 id=from-stochastic-to-deterministic-decision-rules>From stochastic to deterministic decision rules</h2>
+<p>Conclusion: we can now focus on stationary policies with deterministic markov decision rules.</p>
 <h2 id=example>Example</h2>
 <p>Let&rsquo;s apply the notions to a simple example. Let&rsquo;s consider the following model :</p>
 <img src=images/example_mdp1.png alt="Example of a markov decision process" class=center>
@@ -124,7 +178,7 @@ Arthur Zucker's Blog</a>
 <a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson2%2f" target=_blank>
 <i class="fab fa-facebook"></i>
 </a>
-<a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson2%2f&text=Reinforcement%20learning%2c%20lesson%202&via=Arthur%20Zucker%27s%20Blog" target=_blank>
+<a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson2%2f&text=Reinforcement%20learning%2c%20lesson%202&via=Arthur%20Zucker%27s%20Portfolio" target=_blank>
 <i class="fab fa-twitter"></i>
 </a>
 <a class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fmva%2frl%2flesson2%2f&title=Reinforcement%20learning%2c%20lesson%202" target=_blank>
@@ -155,12 +209,6 @@ Improve this page
 <div class=next-prev-text>Reinforcement learning, lesson 1</div>
 </a>
 </div>
-<div class="col-md-6 next-article">
-<a href=/posts/projects/ title="Table structure recognition" class="btn btn-outline-info">
-<div>Next <i class="fas fa-chevron-circle-right"></i></div>
-<div class=next-prev-text>Table structure recognition</div>
-</a>
-</div>
 </div>
 <hr>
 </div>
@@ -175,6 +223,14 @@ Improve this page
 <div class=toc>
 <nav id=TableOfContents>
 <ul>
+<li><a href=#reducing-the-search-space->Reducing the search space :</a>
+<ul>
+<li><a href=#history-based-to-markov-decision>History based to markov decision</a></li>
+<li><a href=#non-stationary-to-stationary>Non-stationary to stationary</a></li>
+</ul>
+</li>
+<li><a href=#simplifying-the-value-function>Simplifying the value function</a></li>
+<li><a href=#from-stochastic-to-deterministic-decision-rules>From stochastic to deterministic decision rules</a></li>
 <li><a href=#example>Example</a></li>
 </ul>
 </nav>

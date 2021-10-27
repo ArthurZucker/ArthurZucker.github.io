@@ -31,7 +31,7 @@
 </button>
 <a class=navbar-brand href=/>
 <img src=/images/site/favicon3_hu62e62282d1df9a6f522c194700ff0a75_33785_42x0_resize_box_3.png alt=Logo>
-Arthur Zucker's Blog</a>
+Arthur Zucker's Portfolio</a>
 <button class="navbar-toggler navbar-light" id=toc-toggler type=button onclick=toggleTOC()>
 <span class=navbar-toggler-icon></span>
 </button>
@@ -53,7 +53,25 @@ Arthur Zucker's Blog</a>
 <ul class=tree id=tree>
 <li id=list-heading><a href=/posts data-filter=all>Posts</a></li>
 <div class=subtree>
-<li><a href=/posts/introduction/ title=Introduction>Introduction</a></li>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/flying-foxes-study/>Passive Acoustic Monitoring Using AI</a>
+<ul>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/flying-foxes-study/ai/>Deep Learning pipeline</a>
+<ul>
+<li><a href=/posts/flying-foxes-study/ai/aed/ title="Audio Event Detection">Audio Event Detection</a></li>
+<li><a href=/posts/flying-foxes-study/ai/speaker/ title="Speaker Recognition">Speaker Recognition</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/projects/>Projects</a>
+<ul>
+<li><a href=/posts/projects/safran/ title="Semantic Segmentation for cars">Semantic Segmentation for cars</a></li>
+<li><a href=/posts/projects/clusti/ title="Table Structure Recognition">Table Structure Recognition</a></li>
+</ul>
+</li>
 <li>
 <i class="fas fa-plus-circle"></i><a href=/posts/mva/>MVA Courses</a>
 <ul>
@@ -78,7 +96,6 @@ Arthur Zucker's Blog</a>
 </li>
 </ul>
 </li>
-<li><a href=/posts/projects/ title="Markdown Sample">Markdown Sample</a></li>
 </div>
 </ul>
 </div>
@@ -88,6 +105,40 @@ Arthur Zucker's Blog</a>
 <section class=content-section id=content-section>
 <div class="content container-fluid" id=content>
 <div class="container-fluid post-card-holder" id=post-card-holder>
+<div class=post-card>
+<a href=/posts/flying-foxes-study/ai/aed/ class=post-card-link>
+<div class=card>
+<div class=card-head>
+<img class=card-img-top src=/images/default-hero.jpg alt="Hero Image">
+</div>
+<div class=card-body>
+<h5 class=card-title>PAMAI : Audio Event Detection</h5>
+<p class="card-text post-summary"></p>
+</div>
+<div class=card-footer>
+<span class=float-left>October 18, 2021</span>
+<a href=/posts/flying-foxes-study/ai/aed/ class="float-right btn btn-outline-info btn-sm">Read</a>
+</div>
+</div>
+</a>
+</div>
+<div class=post-card>
+<a href=/posts/flying-foxes-study/ai/speaker/ class=post-card-link>
+<div class=card>
+<div class=card-head>
+<img class=card-img-top src=/images/default-hero.jpg alt="Hero Image">
+</div>
+<div class=card-body>
+<h5 class=card-title>PAMAI : Speaker Recognition</h5>
+<p class="card-text post-summary"></p>
+</div>
+<div class=card-footer>
+<span class=float-left>October 18, 2021</span>
+<a href=/posts/flying-foxes-study/ai/speaker/ class="float-right btn btn-outline-info btn-sm">Read</a>
+</div>
+</div>
+</a>
+</div>
 <div class=post-card>
 <a href=/posts/mva/rl/lesson1/ class=post-card-link>
 <div class=card>
@@ -140,43 +191,6 @@ Arthur Zucker's Blog</a>
 </a>
 </div>
 <div class=post-card>
-<a href=/posts/introduction/ class=post-card-link>
-<div class=card>
-<div class=card-head>
-<img class=card-img-top src=/posts/introduction/hero.svg alt="Hero Image">
-</div>
-<div class=card-body>
-<h5 class=card-title>Introduction</h5>
-<p class="card-text post-summary">Greeting! This is an introduction post. This post tests the followings:
-Hero image is in the same directory as the post. This post should be at top of the sidebar. Post author should be the same as specified in author.yaml file. </p>
-</div>
-<div class=card-footer>
-<span class=float-left>June 8, 2020</span>
-<a href=/posts/introduction/ class="float-right btn btn-outline-info btn-sm">Read</a>
-</div>
-</div>
-</a>
-</div>
-<div class=post-card>
-<a href=/posts/projects/ class=post-card-link>
-<div class=card>
-<div class=card-head>
-<img class=card-img-top src=/posts/projects/hero.svg alt="Hero Image">
-</div>
-<div class=card-body>
-<h5 class=card-title>Table structure recognition</h5>
-<p class="card-text post-summary">This is a sample post intended to test the followings:
-A different post author. Table of contents. Markdown content rendering. Math rendering. Emoji rendering. Markdown Syntax Rendering Headings The following HTML &lt;h1>—&lt;h6> elements represent six levels of section headings. &lt;h1> is the highest section level while &lt;h6> is the lowest.
-H1 H2 H3 H4 H5 H6 Paragraph Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur?</p>
-</div>
-<div class=card-footer>
-<span class=float-left>June 8, 2020</span>
-<a href=/posts/projects/ class="float-right btn btn-outline-info btn-sm">Read</a>
-</div>
-</div>
-</a>
-</div>
-<div class=post-card>
 <a href=/posts/mva/deeplearning/lesson2/ class=post-card-link>
 <div class=card>
 <div class=card-head>
@@ -189,6 +203,40 @@ H1 H2 H3 H4 H5 H6 Paragraph Xerum, quo qui aut unt expliquam qui dolut labo. Aqu
 <div class=card-footer>
 <span class=float-left>January 1, 0001</span>
 <a href=/posts/mva/deeplearning/lesson2/ class="float-right btn btn-outline-info btn-sm">Read</a>
+</div>
+</div>
+</a>
+</div>
+<div class=post-card>
+<a href=/posts/projects/safran/ class=post-card-link>
+<div class=card>
+<div class=card-head>
+<img class=card-img-top src=/images/default-hero.jpg alt="Hero Image">
+</div>
+<div class=card-body>
+<h5 class=card-title>Semantic Segmentation for cars</h5>
+<p class="card-text post-summary"></p>
+</div>
+<div class=card-footer>
+<span class=float-left>January 1, 0001</span>
+<a href=/posts/projects/safran/ class="float-right btn btn-outline-info btn-sm">Read</a>
+</div>
+</div>
+</a>
+</div>
+<div class=post-card>
+<a href=/posts/projects/clusti/ class=post-card-link>
+<div class=card>
+<div class=card-head>
+<img class=card-img-top src=/images/default-hero.jpg alt="Hero Image">
+</div>
+<div class=card-body>
+<h5 class=card-title>Table Structure Recognition</h5>
+<p class="card-text post-summary"></p>
+</div>
+<div class=card-footer>
+<span class=float-left>January 1, 0001</span>
+<a href=/posts/projects/clusti/ class="float-right btn btn-outline-info btn-sm">Read</a>
 </div>
 </div>
 </a>

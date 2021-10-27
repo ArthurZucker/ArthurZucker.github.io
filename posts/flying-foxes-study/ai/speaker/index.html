@@ -1,6 +1,6 @@
 <!doctype html><html>
 <head>
-<title>Introduction</title>
+<title>PAMAI : Speaker Recognition</title>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="ie=edge">
@@ -12,13 +12,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css>
 <link rel=icon type=image/png href=/images/site/favicon3_hu62e62282d1df9a6f522c194700ff0a75_33785_42x0_resize_box_3.png>
-<meta property="og:title" content="Introduction">
-<meta property="og:description" content="Introduction to Sample Post">
+<meta property="og:title" content="PAMAI : Speaker Recognition">
+<meta property="og:description" content="In this part I will explain our research in speaker recognition.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://arthurzucker.github.io/posts/introduction/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-06-08T08:06:25+06:00">
-<meta property="article:modified_time" content="2020-06-08T08:06:25+06:00">
-<meta name=description content="Introduction to Sample Post">
+<meta property="og:url" content="https://arthurzucker.github.io/posts/flying-foxes-study/ai/speaker/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-10-18T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-10-18T00:00:00+00:00">
+<meta name=description content="In this part I will explain our research in speaker recognition.">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css>
 <link rel=stylesheet href=/css/layouts/single.css>
 <link rel=stylesheet href=/css/navigators/sidebar.css>
@@ -35,7 +35,7 @@
 </button>
 <a class=navbar-brand href=/>
 <img src=/images/site/favicon3_hu62e62282d1df9a6f522c194700ff0a75_33785_42x0_resize_box_3.png alt=Logo>
-Arthur Zucker's Blog</a>
+Arthur Zucker's Portfolio</a>
 <button class="navbar-toggler navbar-light" id=toc-toggler type=button onclick=toggleTOC()>
 <span class=navbar-toggler-icon></span>
 </button>
@@ -57,7 +57,25 @@ Arthur Zucker's Blog</a>
 <ul class=tree id=tree>
 <li id=list-heading><a href=/posts data-filter=all>Posts</a></li>
 <div class=subtree>
-<li><a class=active href=/posts/introduction/ title=Introduction>Introduction</a></li>
+<li>
+<i class="fas fa-minus-circle"></i><a class=active href=/posts/flying-foxes-study/>Passive Acoustic Monitoring Using AI</a>
+<ul class=active>
+<li>
+<i class="fas fa-minus-circle"></i><a class=active href=/posts/flying-foxes-study/ai/>Deep Learning pipeline</a>
+<ul class=active>
+<li><a href=/posts/flying-foxes-study/ai/aed/ title="Audio Event Detection">Audio Event Detection</a></li>
+<li><a class=active href=/posts/flying-foxes-study/ai/speaker/ title="Speaker Recognition">Speaker Recognition</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/projects/>Projects</a>
+<ul>
+<li><a href=/posts/projects/safran/ title="Semantic Segmentation for cars">Semantic Segmentation for cars</a></li>
+<li><a href=/posts/projects/clusti/ title="Table Structure Recognition">Table Structure Recognition</a></li>
+</ul>
+</li>
 <li>
 <i class="fas fa-plus-circle"></i><a href=/posts/mva/>MVA Courses</a>
 <ul>
@@ -82,7 +100,6 @@ Arthur Zucker's Blog</a>
 </li>
 </ul>
 </li>
-<li><a href=/posts/projects/ title="Markdown Sample">Markdown Sample</a></li>
 </div>
 </ul>
 </div>
@@ -92,55 +109,47 @@ Arthur Zucker's Blog</a>
 <section class=content-section id=content-section>
 <div class=content>
 <div class="container p-0 read-area">
-<div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://arthurzucker.github.io/posts/introduction/hero.svg)>
+<div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://arthurzucker.github.io/images/default-hero.jpg)>
 </div>
 <div class=page-content>
 <div class="author-profile ml-auto align-self-lg-center">
 <img class=rounded-circle src=/images/author/me_hue0c31f5a221a4dac786736a317c9bf63_45873_120x120_fit_q75_box.jpg alt="Author Image">
 <h5 class=author-name>Arthur Zucker</h5>
-<p>June 8, 2020</p>
+<p>October 18, 2021</p>
 </div>
 <div class=title>
-<h1>Introduction</h1>
+<h1>PAMAI : Speaker Recognition</h1>
 </div>
 <div class=taxonomy-terms>
 <ul>
-<li class=rounded><a href=/tags/basic class="btn, btn-sm">Basic</a></li>
-<li class=rounded><a href=/tags/multi-lingual class="btn, btn-sm">Multi-lingual</a></li>
 </ul>
 </div>
 <div class=post-content id=post-content>
-<p>Greeting! This is an introduction post. This post tests the followings:</p>
-<ul>
-<li>Hero image is in the same directory as the post.</li>
-<li>This post should be at top of the sidebar.</li>
-<li>Post author should be the same as specified in <code>author.yaml</code> file.</li>
-</ul>
 </div>
 <div class="row pl-3 pr-3">
 <div class="col-md-6 share-buttons">
 <strong>Share on:</strong>
-<a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farthurzucker.github.io%2fposts%2fintroduction%2f" target=_blank>
+<a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farthurzucker.github.io%2fposts%2fflying-foxes-study%2fai%2fspeaker%2f" target=_blank>
 <i class="fab fa-facebook"></i>
 </a>
-<a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fintroduction%2f&text=Introduction&via=Arthur%20Zucker%27s%20Blog" target=_blank>
+<a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fflying-foxes-study%2fai%2fspeaker%2f&text=PAMAI%20%3a%20Speaker%20Recognition&via=Arthur%20Zucker%27s%20Portfolio" target=_blank>
 <i class="fab fa-twitter"></i>
 </a>
-<a class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fintroduction%2f&title=Introduction" target=_blank>
+<a class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fflying-foxes-study%2fai%2fspeaker%2f&title=PAMAI%20%3a%20Speaker%20Recognition" target=_blank>
 <i class="fab fa-reddit"></i>
 </a>
-<a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fintroduction%2f&title=Introduction" target=_blank>
+<a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fflying-foxes-study%2fai%2fspeaker%2f&title=PAMAI%20%3a%20Speaker%20Recognition" target=_blank>
 <i class="fab fa-linkedin"></i>
 </a>
-<a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text=Introduction https%3a%2f%2farthurzucker.github.io%2fposts%2fintroduction%2f" target=_blank>
+<a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text=PAMAI%20%3a%20Speaker%20Recognition https%3a%2f%2farthurzucker.github.io%2fposts%2fflying-foxes-study%2fai%2fspeaker%2f" target=_blank>
 <i class="fab fa-whatsapp"></i>
 </a>
-<a class="btn btn-sm email-btn" href="mailto:?subject=Introduction&body=https%3a%2f%2farthurzucker.github.io%2fposts%2fintroduction%2f" target=_blank>
+<a class="btn btn-sm email-btn" href="mailto:?subject=PAMAI%20%3a%20Speaker%20Recognition&body=https%3a%2f%2farthurzucker.github.io%2fposts%2fflying-foxes-study%2fai%2fspeaker%2f" target=_blank>
 <i class="fas fa-envelope-open-text"></i>
 </a>
 </div>
 <div class="col-md-6 btn-improve-page">
-<a href=https://github.com/ArthurZucker/ArthurZucker.github.io/edit/main/content/posts/introduction/index.md title="Improve this page" target=_blank rel=noopener>
+<a href=https://github.com/ArthurZucker/ArthurZucker.github.io/edit/main/content/posts/Flying%20Foxes%20study/AI/speaker/index.md title="Improve this page" target=_blank rel=noopener>
 <i class="fas fa-code-branch"></i>
 Improve this page
 </a>
@@ -148,10 +157,16 @@ Improve this page
 </div>
 <hr>
 <div class="row next-prev-navigator">
-<div class="col-md-12 next-article">
-<a href=/posts/mva/recvis/lesson1/ title="Computer Vision and Object Recognition, lesson 1" class="btn btn-outline-info">
+<div class="col-md-6 previous-article">
+<a href=/posts/flying-foxes-study/ai/aed/ title="PAMAI : Audio Event Detection" class="btn btn-outline-info">
+<div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+<div class=next-prev-text>PAMAI : Audio Event Detection</div>
+</a>
+</div>
+<div class="col-md-6 next-article">
+<a href=/posts/projects/safran/ title="Semantic Segmentation for cars" class="btn btn-outline-info">
 <div>Next <i class="fas fa-chevron-circle-right"></i></div>
-<div class=next-prev-text>Computer Vision and Object Recognition, lesson 1</div>
+<div class=next-prev-text>Semantic Segmentation for cars</div>
 </a>
 </div>
 </div>
