@@ -9,7 +9,7 @@ menu:
     weight: 10
     parent: pamai
 hero: pipeline2.png
-draft: true
+draft: false
 ---
 
 # Introduction 
