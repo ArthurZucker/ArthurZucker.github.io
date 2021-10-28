@@ -111,7 +111,7 @@ Arthur Zucker's Portfolio</a>
 <section class=content-section id=content-section>
 <div class=content>
 <div class="container p-0 read-area">
-<div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://arthurzucker.github.io/images/default-hero.jpg)>
+<div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://arthurzucker.github.io/posts/flying-foxes-study/ecology/pipeline2.png)>
 </div>
 <div class=page-content>
 <div class="author-profile ml-auto align-self-lg-center">
@@ -130,20 +130,25 @@ Arthur Zucker's Portfolio</a>
 <h1 id=introduction>Introduction</h1>
 <p><em>Pteropus dasymallus</em> or flying foxes (from the <em>{Pteropus Genus)</em> is an insular solitary island fruit bat inhabiting the Ryukyu archipelago in Japan and some Taiwanese islands.
 The important and widespread decline of this species, while mostly related to habitat loss and hunting <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup> , raises concern about their level of protection.</p>
-<p>Currently, $60%$ of <em>Pteropus</em> for which data are available are listed as <strong>vulnerable</strong>, <strong>endangered</strong> or <strong>critically endangered</strong> on the IUCN (2020) Red List<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>.</p>
+<p>Currently, $ 60 \%% $ of <em>Pteropus</em> for which data are available are listed as <strong>vulnerable</strong>, <strong>endangered</strong> or <strong>critically endangered</strong> on the IUCN (2020) Red List<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>.</p>
 <p>Flying fox is a keystone species in tropical forest ecosystems as they provide seed dispersal and pollination services important for forest regeneration, especially in insular ecosystems<sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>.</p>
 <p>Flying foxes disperse seeds by dropping them in the form of fecal pellets.
 Below a certain density population threshold, flying foxes disperse almost no seed.Therefore, it is important to keep the number of flying foxes above the critical threshold necessary to provide ecosystem services. Unexpected food shortages due to typhoons decrease the abundance of flying foxes and subsequently disrupts forest ecology. Additionally, increases in flying fox abundance may cause conflicts with agriculture. Hence the need to asses and control the population of flying foxes, as well as support ecological studies and conservation programs.</p>
 <p>Monitoring can be done in two forms<sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup></p>
 <p><strong>Active</strong> monitoring is used on the field studies, and needs to be conducted on a large scale. It is subject to observational and process uncertainties, and requires a lot of means, both financial and human. Moreover, it is invasive and can disturb the studied individuals. Whereas, <em>passive</em> monitoring is stealthy and non invasive. Passive Acoustic Monitoring (PAM) in particular is one of the most promising monitoring approaches. Although PAM is widely used to study microbats, it has not been used for flying foxes. PAM relies on sound recorders placed in wildlife, which provide environment sounds that are analysed. Flying Foxes do not use echolocation, and interact using audible sounds.</p>
 <p>Although an automated detection system is necessary to develop a PAM system for Ryukyu flying foxes, there are no studies or database of vocalizations for this species. Furthermore, studies about the vocalization of <em>Pteropus</em> are scarce.</p>
-<p>The main goal consists in creating a 3-step pipeline including the following:</p>
+<p>The following figure describe the pipeline Idea.
+<img src=pipeline2.png alt="PAMAI pipeline">
+The main goal consists in creating a 3-step pipeline including the following:</p>
 <ol>
 <li><strong>Audio Segmentation (Audio Event Detection)</strong>: all bat calls recorded have to be isolated from background noises, natural sounds and other species such as frogs and birds.</li>
 <li><strong>Audio Event Classification</strong>: each call can fall in one of the twelve call categories, which provides information on the context of the call, and the interaction.</li>
 <li><strong>Speaker Recognition</strong>: each emitter has to be identified in order to asses the density population and the possible movements, using the previously known location of identification.</li>
 </ol>
 <p>This study was supervised by Christian E. Vincenot, in collaboration with Kyoto University&rsquo;s Biosphere Informatics Laboratory which provided the problematic.</p>
+<div class="alert alert-success">
+<strong>We recently presented our <img src=Poster_PAMAI.pdf alt=poster> at the 15th European Bat Symposium.</strong>
+</div>
 <section class=footnotes role=doc-endnotes>
 <hr>
 <ol>
@@ -280,5 +285,11 @@ Improve this page
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js></script>
 <script src=/js/single.js></script>
 <script>hljs.initHighlightingOnLoad()</script>
+<script>window.MathJax={tex:{inlineMath:[['$','$']]},options:{enableMenu:!0}}</script>
+<script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js></script>
+<style>mjx-container.MathJax[display=inline]{font-size:150%!important}mjx-container.MathJax[display=true]{text-align:left!important}@media screen and (min-width:600px){mjx-container.MathJax[display=true]{padding-left:2rem}}</style>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css integrity=sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js integrity=sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js integrity=sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI crossorigin=anonymous onload=renderMathInElement(document.body)></script>
 </body>
 </html>
