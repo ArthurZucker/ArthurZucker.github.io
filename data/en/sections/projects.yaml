@@ -62,7 +62,7 @@ projects:
   summary: This subject was proposed during the High performance Computing class at Polytech Sorbonne. We tackled the implementation of batch merge and merge sort based on a research article. 
   tags: ["academic","HPC","CUDA"]
 
-- name: Finiet Element Method
+- name: Finite Element Method
   logo: /images/sections/projects/github.svg
   role: Homework  
   timeline: "5th semester at Polyetch Sorbonne"

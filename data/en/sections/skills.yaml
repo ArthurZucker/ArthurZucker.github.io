@@ -13,7 +13,7 @@ section:
 skills:
 - name: Python
   logo: /images/sections/skills/python.png
-  summary: "Have more than 4 years of coding experience with the language. Fluent in data processing, database handling, and various deep learning frameworks such as Pytorch, Tensorflow, Sickit learn."
+  summary: "Have more than 4 years of coding experience with the language. Fluent in data processing, database handling, and various deep learning frameworks such as Pytorch, Tensorflow, Sickit learn, numpy, pandas, etc."
   url: "https://python.org/"
 
 - name: C++
@@ -32,4 +32,20 @@ skills:
 - name: Latex
   logo: /images/sections/skills/overleaf.png
   summary: "Wrote a research paper in Latex. Also familiar with reports and beamers coded on overleaf's online latex compiler"
+
+
+- name: Flutter
+  logo: /images/sections/skills/flutter-logo.svg
+  summary: "Developed a static application and website using flutter for my twizzy contest project. See the accomplishment section.   "
+
+
+
+- name: Matlab
+  logo: /images/sections/skills/Matlab_Logo.png
+  summary: "Implemented various mathematical differentiations and approximations methods. "
+
+
+- name: R programming language
+  logo: /images/sections/skills/R.png
+  summary: "Performed a diversity of data analysis lab works as well as the study of stochastic markov decision processes using R"
 
