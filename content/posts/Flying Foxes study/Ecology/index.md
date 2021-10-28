@@ -10,6 +10,7 @@ menu:
     parent: pamai
 hero: pipeline2.png
 draft: false
+math: True
 ---
 
 # Introduction 
@@ -18,9 +19,7 @@ draft: false
 The important and widespread decline of this species, while mostly related to habitat loss and hunting [^1] [^2] [^3] , raises concern about their level of protection. 
 
 
-Currently, $60\%$ of *Pteropus* for which data are available are listed as **vulnerable**, **endangered** or **critically endangered** on the IUCN (2020) Red List[^4].
-
-
+Currently, $ 60 \\%%  $ of *Pteropus* for which data are available are listed as **vulnerable**, **endangered** or **critically endangered** on the IUCN (2020) Red List[^4].
 
 Flying fox is a keystone species in tropical forest ecosystems as they provide seed dispersal and pollination services important for forest regeneration, especially in insular ecosystems[^5]. 
 
@@ -33,6 +32,8 @@ Monitoring can be done in two forms[^6]
 
 Although an automated detection system is necessary to develop a PAM system for Ryukyu flying foxes, there are no studies or database of vocalizations for this species. Furthermore, studies about the vocalization of *Pteropus* are scarce. 
 
+The following figure describe the pipeline Idea.
+![PAMAI pipeline](pipeline2.png)
 The main goal consists in creating a 3-step pipeline including the following: 
 
 1. **Audio Segmentation (Audio Event Detection)**:  all bat calls recorded have to be isolated from background noises, natural sounds and other species such as frogs and birds.
@@ -40,6 +41,10 @@ The main goal consists in creating a 3-step pipeline including the following:
 3.  **Speaker Recognition**: each emitter has to be identified in order to asses the density population and the possible movements, using the previously known location of identification. 
 
 This study was supervised by Christian E. Vincenot, in collaboration with Kyoto University's Biosphere Informatics Laboratory which provided the problematic. 
+
+{{< alert type="success" >}}
+We recently presented our ![poster](Poster_PAMAI.pdf) at the 15th European Bat Symposium. 
+{{< /alert >}}
 
 
 [^1]: https://doi.org/10.1371/journal.pone.0177748
