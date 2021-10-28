@@ -1,0 +1,284 @@
+<!doctype html><html>
+<head>
+<title>PAMAI : Passive Acoustic Monitoring Using AI</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<link rel=stylesheet href=/css/bootstrap.min.css>
+<link rel=stylesheet href=/css/layouts/main.css>
+<link rel=stylesheet href=/css/navigators/navbar.css>
+<link rel=stylesheet href=/css/plyr.css>
+<link rel=stylesheet href=/css/flag-icon.min.css>
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel=stylesheet>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css>
+<link rel=icon type=image/png href=/images/site/favicon3_hu62e62282d1df9a6f522c194700ff0a75_33785_42x0_resize_box_3.png>
+<meta property="og:title" content="PAMAI : Passive Acoustic Monitoring Using AI">
+<meta property="og:description" content="PAMAI is a project I have been working on for the past two years. By collaborating with Kyoto University's Bio-informatics Laboratory, I became a research Assistant, and have been providing my insight as an Applied Deep Learning researcher.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://arthurzucker.github.io/posts/flying-foxes-study/ecology/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-10-20T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-10-20T00:00:00+00:00">
+<meta name=description content="PAMAI is a project I have been working on for the past two years. By collaborating with Kyoto University's Bio-informatics Laboratory, I became a research Assistant, and have been providing my insight as an Applied Deep Learning researcher.">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css>
+<link rel=stylesheet href=/css/layouts/single.css>
+<link rel=stylesheet href=/css/navigators/sidebar.css>
+<link rel=stylesheet href=/css/style.css>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YRJ694EF5C"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-YRJ694EF5C',{anonymize_ip:!1})}</script>
+</head>
+<body data-spy=scroll data-target=#TableOfContents data-offset=80>
+<div class="container-fluid bg-dimmed wrapper">
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+<div class=container>
+<button class="navbar-toggler navbar-light" id=sidebar-toggler type=button onclick=toggleSidebar()>
+<span class=navbar-toggler-icon></span>
+</button>
+<a class=navbar-brand href=/>
+<img src=/images/site/favicon3_hu62e62282d1df9a6f522c194700ff0a75_33785_42x0_resize_box_3.png alt=Logo>
+Arthur Zucker's Portfolio</a>
+<button class="navbar-toggler navbar-light" id=toc-toggler type=button onclick=toggleTOC()>
+<span class=navbar-toggler-icon></span>
+</button>
+<div class="collapse navbar-collapse lang-selector" id=top-nav-items>
+<ul class="navbar-nav ml-auto">
+</ul>
+</div>
+</div>
+<img src=/images/site/favicon3_hu62e62282d1df9a6f522c194700ff0a75_33785_42x0_resize_box_3.png class=d-none id=main-logo alt=Logo>
+<img src=/images/site/favicon4_hu5db1c7af89e12ca8c711bcc33bb3007c_15810_42x0_resize_box_3.png class=d-none id=inverted-logo alt="Inverted Logo">
+</nav>
+<section class=sidebar-section id=sidebar-section>
+<div class=sidebar-holder>
+<div class=sidebar id=sidebar>
+<form class=mx-auto method=get action=/search>
+<input type=text name=keyword placeholder=Search data-search id=search-box>
+</form>
+<div class=sidebar-tree>
+<ul class=tree id=tree>
+<li id=list-heading><a href=/posts data-filter=all>Posts</a></li>
+<div class=subtree>
+<li>
+<i class="fas fa-minus-circle"></i><a class=active href=/posts/flying-foxes-study/>Passive Acoustic Monitoring Using AI</a>
+<ul class=active>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/flying-foxes-study/ai/>Deep Learning pipeline</a>
+<ul>
+<li><a href=/posts/flying-foxes-study/ai/aed/ title="Audio Event Detection">Audio Event Detection</a></li>
+<li><a href=/posts/flying-foxes-study/ai/speaker/ title="Speaker Recognition">Speaker Recognition</a></li>
+</ul>
+</li>
+<li><a class=active href=/posts/flying-foxes-study/ecology/ title=Ecology>Ecology</a></li>
+</ul>
+</li>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/projects/>Projects</a>
+<ul>
+<li><a href=/posts/projects/safran/ title="Semantic Segmentation for cars">Semantic Segmentation for cars</a></li>
+<li><a href=/posts/projects/clusti/ title="Table Structure Recognition">Table Structure Recognition</a></li>
+</ul>
+</li>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/mva/>MVA Courses</a>
+<ul>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/mva/recvis/>Computer Vision & Object Recognition</a>
+<ul>
+<li><a href=/posts/mva/recvis/lesson1/ title="Lesson 1">Lesson 1</a></li>
+<li><a href=/posts/mva/recvis/lesson3/ title="Lesson 3">Lesson 3</a></li>
+</ul>
+</li>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/mva/deeplearning/>Deep Learning</a>
+<ul>
+<li><a href=/posts/mva/deeplearning/lesson2/ title="Lesson 2">Lesson 2</a></li>
+</ul>
+</li>
+<li>
+<i class="fas fa-plus-circle"></i><a href=/posts/mva/rl/>Reinforcement Learning</a>
+<ul>
+<li><a href=/posts/mva/rl/lesson1/ title="Lesson 1">Lesson 1</a></li>
+<li><a href=/posts/mva/rl/lesson2/ title="Lesson 2">Lesson 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</div>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class=content-section id=content-section>
+<div class=content>
+<div class="container p-0 read-area">
+<div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://arthurzucker.github.io/images/default-hero.jpg)>
+</div>
+<div class=page-content>
+<div class="author-profile ml-auto align-self-lg-center">
+<img class=rounded-circle src=/images/author/me_hue0c31f5a221a4dac786736a317c9bf63_45873_120x120_fit_q75_box.jpg alt="Author Image">
+<h5 class=author-name>Arthur Zucker</h5>
+<p>October 20, 2021</p>
+</div>
+<div class=title>
+<h1>PAMAI : Passive Acoustic Monitoring Using AI</h1>
+</div>
+<div class=taxonomy-terms>
+<ul>
+</ul>
+</div>
+<div class=post-content id=post-content>
+<h1 id=introduction>Introduction</h1>
+<p><em>Pteropus dasymallus</em> or flying foxes (from the <em>{Pteropus Genus)</em> is an insular solitary island fruit bat inhabiting the Ryukyu archipelago in Japan and some Taiwanese islands.
+The important and widespread decline of this species, while mostly related to habitat loss and hunting <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup> , raises concern about their level of protection.</p>
+<p>Currently, $60%$ of <em>Pteropus</em> for which data are available are listed as <strong>vulnerable</strong>, <strong>endangered</strong> or <strong>critically endangered</strong> on the IUCN (2020) Red List<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>.</p>
+<p>Flying fox is a keystone species in tropical forest ecosystems as they provide seed dispersal and pollination services important for forest regeneration, especially in insular ecosystems<sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>.</p>
+<p>Flying foxes disperse seeds by dropping them in the form of fecal pellets.
+Below a certain density population threshold, flying foxes disperse almost no seed.Therefore, it is important to keep the number of flying foxes above the critical threshold necessary to provide ecosystem services. Unexpected food shortages due to typhoons decrease the abundance of flying foxes and subsequently disrupts forest ecology. Additionally, increases in flying fox abundance may cause conflicts with agriculture. Hence the need to asses and control the population of flying foxes, as well as support ecological studies and conservation programs.</p>
+<p>Monitoring can be done in two forms<sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup></p>
+<p><strong>Active</strong> monitoring is used on the field studies, and needs to be conducted on a large scale. It is subject to observational and process uncertainties, and requires a lot of means, both financial and human. Moreover, it is invasive and can disturb the studied individuals. Whereas, <em>passive</em> monitoring is stealthy and non invasive. Passive Acoustic Monitoring (PAM) in particular is one of the most promising monitoring approaches. Although PAM is widely used to study microbats, it has not been used for flying foxes. PAM relies on sound recorders placed in wildlife, which provide environment sounds that are analysed. Flying Foxes do not use echolocation, and interact using audible sounds.</p>
+<p>Although an automated detection system is necessary to develop a PAM system for Ryukyu flying foxes, there are no studies or database of vocalizations for this species. Furthermore, studies about the vocalization of <em>Pteropus</em> are scarce.</p>
+<p>The main goal consists in creating a 3-step pipeline including the following:</p>
+<ol>
+<li><strong>Audio Segmentation (Audio Event Detection)</strong>: all bat calls recorded have to be isolated from background noises, natural sounds and other species such as frogs and birds.</li>
+<li><strong>Audio Event Classification</strong>: each call can fall in one of the twelve call categories, which provides information on the context of the call, and the interaction.</li>
+<li><strong>Speaker Recognition</strong>: each emitter has to be identified in order to asses the density population and the possible movements, using the previously known location of identification.</li>
+</ol>
+<p>This study was supervised by Christian E. Vincenot, in collaboration with Kyoto University&rsquo;s Biosphere Informatics Laboratory which provided the problematic.</p>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p><a href=https://doi.org/10.1371/journal.pone.0177748>https://doi.org/10.1371/journal.pone.0177748</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2 role=doc-endnote>
+<p>Vincenot CE, Florens FB, Kingston T. Can we protect island flying foxes? Science. 2017 Mar 31;355(6332):1368-1370. doi: 10.1126/science.aam7582. PMID: 28360279.&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3 role=doc-endnote>
+<p>Adelman ZN, Albritton LM, Boris-Lawrie K, Buchmeier MJ, Cannon P, Cho M, DiGiusto D, Donahue JK, Federoff HJ, Hammarskjold ML, Hardison AD, Hearing P, Lee B, Lee DA, Porteus MH, Ross LF, Ross SR, Wooley DP, Zoloth L. Protect NIH&rsquo;s DNA advisory committee. Science. 2018 Oct 26;362(6413):409-410. doi: 10.1126/science.aav2483. PMID: 30361364.&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:4 role=doc-endnote>
+<p><a href="https://www.iucnredlist.org/search?taxonomies=119113&searchType=species">https://www.iucnredlist.org/search?taxonomies=119113&searchType=species</a>&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:5 role=doc-endnote>
+<p>COX, P.A., ELMQVIST, T., PIERSON, E.D. and RAINEY, W.E. (1991), Flying Foxes as Strong Interactors in South Pacific Island Ecosystems: A Conservation Hypothesis. Conservation Biology, 5: 448-454. <a href=https://doi.org/10.1111/j.1523-1739.1991.tb00351.x>https://doi.org/10.1111/j.1523-1739.1991.tb00351.x</a>. Aziz SA, Clements GR, McConkey KR, et al. Pollination by the locally endangered island flying fox (<i>Pteropus hypomelanus</i>) enhances fruit production of the economically important durian (<i>Durio zibethinus</i>). Ecology and Evolution. 2017 Nov;7(21):8670-8684. DOI: 10.1002/ece3.3213. PMID: 29152168; PMCID: PMC5677486.&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:6 role=doc-endnote>
+<p><a href=https://doi.org/10.7717/peerj.103>https://doi.org/10.7717/peerj.103</a>&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+<div class="row pl-3 pr-3">
+<div class="col-md-6 share-buttons">
+<strong>Share on:</strong>
+<a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farthurzucker.github.io%2fposts%2fflying-foxes-study%2fecology%2f" target=_blank>
+<i class="fab fa-facebook"></i>
+</a>
+<a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fflying-foxes-study%2fecology%2f&text=PAMAI%20%3a%20Passive%20Acoustic%20Monitoring%20Using%20AI&via=Arthur%20Zucker%27s%20Portfolio" target=_blank>
+<i class="fab fa-twitter"></i>
+</a>
+<a class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fflying-foxes-study%2fecology%2f&title=PAMAI%20%3a%20Passive%20Acoustic%20Monitoring%20Using%20AI" target=_blank>
+<i class="fab fa-reddit"></i>
+</a>
+<a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farthurzucker.github.io%2fposts%2fflying-foxes-study%2fecology%2f&title=PAMAI%20%3a%20Passive%20Acoustic%20Monitoring%20Using%20AI" target=_blank>
+<i class="fab fa-linkedin"></i>
+</a>
+<a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text=PAMAI%20%3a%20Passive%20Acoustic%20Monitoring%20Using%20AI https%3a%2f%2farthurzucker.github.io%2fposts%2fflying-foxes-study%2fecology%2f" target=_blank>
+<i class="fab fa-whatsapp"></i>
+</a>
+<a class="btn btn-sm email-btn" href="mailto:?subject=PAMAI%20%3a%20Passive%20Acoustic%20Monitoring%20Using%20AI&body=https%3a%2f%2farthurzucker.github.io%2fposts%2fflying-foxes-study%2fecology%2f" target=_blank>
+<i class="fas fa-envelope-open-text"></i>
+</a>
+</div>
+<div class="col-md-6 btn-improve-page">
+<a href=https://github.com/ArthurZucker/ArthurZucker.github.io/edit/main/content/posts/Flying%20Foxes%20study/Ecology/index.md title="Improve this page" target=_blank rel=noopener>
+<i class="fas fa-code-branch"></i>
+Improve this page
+</a>
+</div>
+</div>
+<hr>
+<div class="row next-prev-navigator">
+<div class="col-md-6 previous-article">
+<a href=/posts/flying-foxes-study/ai/speaker/ title="PAMAI : Speaker Recognition" class="btn btn-outline-info">
+<div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+<div class=next-prev-text>PAMAI : Speaker Recognition</div>
+</a>
+</div>
+<div class="col-md-6 next-article">
+<a href=/posts/projects/safran/ title="Semantic Segmentation for cars" class="btn btn-outline-info">
+<div>Next <i class="fas fa-chevron-circle-right"></i></div>
+<div class=next-prev-text>Semantic Segmentation for cars</div>
+</a>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<a id=scroll-to-top class=btn><i class="fas fa-chevron-circle-up"></i></a>
+</section>
+<section class=toc-section id=toc-section>
+<div class=toc-holder>
+<h5 class="text-center pl-3">Table of Contents</h5>
+<hr>
+<div class=toc>
+<nav id=TableOfContents></nav>
+</div>
+</div>
+</section>
+</div>
+<footer class="container-fluid text-center align-content-center footer pb-2">
+<div class="container pt-5">
+<div class="row text-left">
+<div class="col-md-4 col-sm-12">
+<h5>Navigation</h5>
+<ul>
+<li class=nav-item>
+<a class=smooth-scroll href=/#about>About</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#skills>Skills</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#experiences>Experiences</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#education>Education</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#projects>Projects</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#recent-posts>Recent Posts</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#accomplishments>Accomplishments</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#achievements>Achievements</a>
+</li>
+</ul>
+</div>
+<div class="col-md-4 col-sm-12">
+<h5>Contact me:</h5>
+<ul>
+<li><span>Email: </span> <span>arthur.zucker@ens-paris-saclay.fr</span></li>
+</ul>
+</div>
+</div>
+</div>
+<script async src=//static.getclicky.com/101337544.js></script>
+<noscript><p><img alt=Clicky width=1 height=1 src=//in.getclicky.com/101337544ns.gif></p></noscript>
+</footer>
+<script type=text/javascript src=/js/jquery-3.4.1.min.js></script>
+<script type=text/javascript src=/js/popper.min.js></script>
+<script type=text/javascript src=/js/bootstrap.min.js></script>
+<script type=text/javascript src=/js/navbar.js></script>
+<script type=text/javascript src=/js/plyr.js></script>
+<script type=text/javascript src=/js/main.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js></script>
+<script src=/js/single.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>
