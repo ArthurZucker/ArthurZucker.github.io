@@ -81,6 +81,7 @@ Arthur Zucker's Portfolio</a>
 <i class="fas fa-plus-circle"></i><a href=/posts/mva/recvis/>Computer Vision & Object Recognition</a>
 <ul>
 <li><a href=/posts/mva/recvis/lesson1/ title="Lesson 1">Lesson 1</a></li>
+<li><a href=/posts/mva/recvis/lesson3/ title="Lesson 3">Lesson 3</a></li>
 </ul>
 </li>
 <li>
@@ -138,6 +139,25 @@ Arthur Zucker's Portfolio</a>
 <h3 id=classification-problems>Classification problems</h3>
 <p>Softlax used in the last layer. But if we don&rsquo;t have a class, we should give him a random class? We don&rsquo;t really want to force the output, but need to know where the network is not confident. Paper on how RELU fails to express the non-confidence <strong>look at the slides</strong></p>
 <h2 id=generalization>Generalization</h2>
+<p>Link to double descent?? Grooking</p>
+<h2 id=regularization>Regularization</h2>
+<p>Weight decay, make our parameters smaller with L2 regularitaion?</p>
+<p>Normalisation??? Why? Because the activation function has more mapping when you are between 0 znd 1 or something of the kind.</p>
+<h2 id=optimization-for-deep-learning>Optimization for deep learning</h2>
+<p>large scae optimisation paper to read</p>
+<p>Identifiable model? ONe set of param can rule out everything? Which mean only one minima. But in NN we can change the order of the neurons and still have similar outputs, thus most of the models are non identifiable. Most of the model have various local minimum, but they are pretty similar.</p>
+<p>Identifiying and attacking the saddle point problem</p>
+<h2 id=back-propagation>Back propagation</h2>
+<p>Follow threw example using the chain rule. Partial derivatives and all</p>
+<h2 id=wheight-initalizer>Wheight Initalizer</h2>
+<h3 id=xavier>Xavier</h3>
+<p>Unifrom with particular distribution?? Add this to @TODO ANKI. Same activation and gradient variance between all layers.</p>
+<h2 id=batch-normalisation>Batch normalisation</h2>
+<p>Normalisation the distribution of input features. Prevents exploding gradients and more resilieent to scaling, but why?</p>
+<h3 id=data-augmentation>Data Augmentation</h3>
+<p>INterpolate two inputs together. Use it as an input to the network, modify cross entropy to work with it <strong>mixup</strong> <strong>cutup</strong>. Real data augmentation creating inputs out of the distribution (they can not exist!) artifical modification.</p>
+<h3 id=dropout>Dropout</h3>
+<p>Use bagging and enesmelbe methods on the various models. You can consider all the variations of the network and train them. Then select the best.</p>
 </div>
 <div class="row pl-3 pr-3">
 <div class="col-md-6 share-buttons">
@@ -171,9 +191,9 @@ Improve this page
 <hr>
 <div class="row next-prev-navigator">
 <div class="col-md-6 previous-article">
-<a href=/posts/mva/recvis/lesson1/ title="Computer Vision and Object Recognition, lesson 1" class="btn btn-outline-info">
+<a href=/posts/mva/recvis/lesson3/ title="Computer Vision and Object Recognition, lesson 3" class="btn btn-outline-info">
 <div><i class="fas fa-chevron-circle-left"></i> Prev</div>
-<div class=next-prev-text>Computer Vision and Object Recognition, lesson 1</div>
+<div class=next-prev-text>Computer Vision and Object Recognition, lesson 3</div>
 </a>
 </div>
 <div class="col-md-6 next-article">
@@ -207,6 +227,20 @@ Improve this page
 </ul>
 </li>
 <li><a href=#generalization>Generalization</a></li>
+<li><a href=#regularization>Regularization</a></li>
+<li><a href=#optimization-for-deep-learning>Optimization for deep learning</a></li>
+<li><a href=#back-propagation>Back propagation</a></li>
+<li><a href=#wheight-initalizer>Wheight Initalizer</a>
+<ul>
+<li><a href=#xavier>Xavier</a></li>
+</ul>
+</li>
+<li><a href=#batch-normalisation>Batch normalisation</a>
+<ul>
+<li><a href=#data-augmentation>Data Augmentation</a></li>
+<li><a href=#dropout>Dropout</a></li>
+</ul>
+</li>
 </ul>
 </nav>
 </div>
