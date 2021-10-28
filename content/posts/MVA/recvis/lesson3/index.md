@@ -23,3 +23,17 @@ b { color: Blue }
 </style>
 
 
+
+Neighbourhood consensus network NIPS
+
+# how do we scale previous methods up? 
+
+Mainly two strategies :
+1. NN 
+2. Quantisize 
+
+## 1 Efficient Approximate NN search 
+A set of local descriptors, but linear NN search is bad, too slow. 
+So use approximate NN. Find a match that is nearby. 
+ - Best Bin First, K-d trees: explore the cells intersecting the ball to the euclidian distance. Verify that there are no closer points. Youi don't go to the last leaf. Complexity depends on the distribution of the points. Thus the solution is the Approximate NN. Backtracking with limited NB of cell explored, based on their priority ranking. You can also use randomized K-d trees. 
+ - Locality Sebsitive Hashing : hash the inpus, have the proba of close inspace points, proba of hash being similar is high
