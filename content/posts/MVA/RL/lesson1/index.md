@@ -190,5 +190,41 @@ $\qquad$:memo: Used when the system should be constantly controlled over tim
 The value function under that policy is the optimal value function : $V^* = V^{\pi^*}$
 
 
+## :video_game: Application : 
+
+I will use a concrete and fun example of a game, where an RL agent can learn to win. The agent will play the [2021 Coding Game Spring Challenge](https://www.codingame.com/ide/puzzle/spring-challenge-2021), the Photosynthesis game (but a bit simplified) 
+
+{{< img src="images/game.png" title="Photosynthesis board game" align="center">}}
+
+Here, the environment is the board game. Let's define the various notions that we introduced before in this framework. 
+
+<div style="padding-left: 30px;">
+:dart: The <g>goal</g> is to end the game with more points than your opponent. For now, let's just say that the goal is to gain as much  <e>sun</e>  :sunny: as possible.
+</div>
+
+<div style="padding-left: 30px;">
+:deciduous_tree: The <g>environment</g> in which the game takes place is a forest. 
+</div>
+
+<div style="padding-left: 30px;">
+:thought_balloon: The <g>actions</g> available to the agent are the following : 
+
+- SEED : Planting a seed. It can only be done in the range of the size of the tree.
+- GROW : Growing a tree. From a seed (size 0) to a sprout (size 1) to a  sapling (size 2) to a mature tree (size 3)
+- CUT  : Cut a tree. Only mature trees can be cut
+- WAIT : Do nothing
+</div>
 
 
+<div style="padding-left: 30px;">
+:moneybag: Each action has a <g>reward</g> associated: 
+
+- Planting a seed costs <r>1 sun</r> plus `number of seeds already on the board`-suns. (for example, in the figure above, planting a seed would cost 3 suns)
+- Growing a tree cost `size_of_the_tree`-suns plus `number of trees withe the same size on the board`-suns.
+- Cutting a tree gives a <g>reward</g> of <g>3 suns</g>. (let's forget for now the quality of the soil)
+- Do nothing
+</div>
+
+<div style="padding-left: 30px;">
+:round_pushpin: The game <g>state</g> is defined by the current state of the board.  
+</div>
