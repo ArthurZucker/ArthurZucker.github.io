@@ -239,7 +239,37 @@ $\qquad$📝 Used when the system should be constantly controlled over tim</p>
 <strong><g>Definition : </g>The solution to an MDP is an optimal policy $\pi^<em>$ satisfying $\pi^</em> \in \underset{\pi \in \Pi}{\text{argmax }} V^\pi$</strong>
 </div>
 <p>The value function under that policy is the optimal value function : $V^* = V^{\pi^*}$</p>
-<section class=footnotes role=doc-endnotes>
+<h2 id=-application->🎮 Application :</h2>
+<p>I will use a concrete and fun example of a game, where an RL agent can learn to win. The agent will play the <a href=https://www.codingame.com/ide/puzzle/spring-challenge-2021>2021 Coding Game Spring Challenge</a>, the Photosynthesis game (but a bit simplified)</p>
+<img src=images/game.png alt="Photosynthesis board game" class=center>
+<p>Here, the environment is the board game. Let&rsquo;s define the various notions that we introduced before in this framework.</p>
+<div style=padding-left:30px>
+🎯 The <g>goal</g> is to end the game with more points than your opponent. For now, let's just say that the goal is to gain as much <e>sun</e> ☀️ as possible.
+</div>
+<div style=padding-left:30px>
+🌳 The <g>environment</g> in which the game takes place is a forest.
+</div>
+<div style=padding-left:30px>
+💭 The <g>actions</g> available to the agent are the following :
+<ul>
+<li>SEED : Planting a seed. It can only be done in the range of the size of the tree.</li>
+<li>GROW : Growing a tree. From a seed (size 0) to a sprout (size 1) to a sapling (size 2) to a mature tree (size 3)</li>
+<li>CUT : Cut a tree. Only mature trees can be cut</li>
+<li>WAIT : Do nothing</li>
+</ul>
+</div>
+<div style=padding-left:30px>
+💰 Each action has a <g>reward</g> associated:
+<ul>
+<li>Planting a seed costs <r>1 sun</r> plus <code>number of seeds already on the board</code>-suns. (for example, in the figure above, planting a seed would cost 3 suns)</li>
+<li>Growing a tree cost <code>size_of_the_tree</code>-suns plus <code>number of trees withe the same size on the board</code>-suns.</li>
+<li>Cutting a tree gives a <g>reward</g> of <g>3 suns</g>. (let&rsquo;s forget for now the quality of the soil)</li>
+<li>Do nothing</li>
+</ul>
+</div>
+<div style=padding-left:30px>
+📍 The game <g>state</g> is defined by the current state of the board.
+</div><section class=footnotes role=doc-endnotes>
 <hr>
 <ol>
 <li id=fn:1 role=doc-endnote>
@@ -335,6 +365,7 @@ Improve this page
 <li><a href=#optimization-problem->Optimization problem :</a></li>
 </ul>
 </li>
+<li><a href=#-application->🎮 Application :</a></li>
 </ul>
 </nav>
 </div>
