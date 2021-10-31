@@ -42,8 +42,9 @@ The main goal consists in creating a 3-step pipeline including the following:
 
 This study was supervised by Christian E. Vincenot, in collaboration with Kyoto University's Biosphere Informatics Laboratory which provided the problematic. 
 
+
 {{< alert type="success" >}}
-We recently presented our ![poster](Poster_PAMAI.pdf) at the 15th European Bat Symposium. 
+We recently presented our [poster](Poster_PAMAI.pdf) at the 15th European Bat Symposium. 
 {{< /alert >}}
 
 
