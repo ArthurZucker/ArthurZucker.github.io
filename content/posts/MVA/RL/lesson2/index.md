@@ -25,6 +25,8 @@ g { color: Green }
 b { color: Blue }
 </style>
 
+# Solving the infinite-Horizon discounted MDPs
+
 The problem we have to solve is the following : 
 $$
 \begin{align*}
@@ -34,7 +36,7 @@ $$
 \end{align*}
 $$
 
-## Reducing the search space :
+## Reducing the search space : 
 
 ### History based to markov decision 
 
@@ -68,10 +70,20 @@ for any $s \in S, a \in A$ and $t \in \mathbb{N}^{+}$
 
 ## Simplifying the value function 
 
+
+
+
 ## From stochastic to deterministic decision rules
 
 
 Conclusion: we can now focus on stationary policies with deterministic markov decision rules. 
+
+
+# Solving Finite-Horizon MDPs
+
+# Solving Infinite-Horizon Undiscounted MDPs
+
+# Summary
 <!-- Started with a recap, but most of what was supposed to be a recap, was kinda new since I did not have time to go back on it. 
 
 - always exists a deterministic markov stationary optimal policy. (mapping between state and action is deterministic). This allows to reduce the size of search. 

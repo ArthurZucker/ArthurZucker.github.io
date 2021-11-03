@@ -49,3 +49,6 @@ skills:
   logo: /images/sections/skills/R.png
   summary: "Performed a diversity of data analysis lab works as well as the study of stochastic markov decision processes using R"
 
+- name: Qiskit
+  logo: /images/sections/skills/Qiskit-Logo.png
+  summary: "Received IBM's quantum computing courses and learned how to use Qiskit, IBM Quantum."
