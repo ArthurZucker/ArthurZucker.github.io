@@ -133,11 +133,12 @@ Arthur Zucker's Portfolio</a>
 <p>This post sums up the content of the lesson n°2 of RL on dynamic programming</p>
 <hr>
 <style>r{color:Red}o{color:Orange}g{color:Green}b{color:Blue}</style>
+<h1 id=solving-the-infinite-horizon-discounted-mdps>Solving the infinite-Horizon discounted MDPs</h1>
 <p>The problem we have to solve is the following :
 $$
 \begin{align*}
-\max _{\pi} V^{\pi}\left(s_{0}\right)= & \<br>
-= & \max _{\pi} \mathbb{E}\left[r\left(s_{0}, d_{0}\left(a_{0} \mid s_{0}\right)\right)+\gamma r\left(s_{1}, d_{1}\left(a_{1} \mid s_{0}, s_{1}\right)\right)+\gamma^{2} r\left(s_{2}, d_{2}\left(a_{2} \mid s_{0}, s_{1}, s_{2}\right)\right)+\ldots\right] \<br>
+\max <em>{\pi} V^{\pi}\left(s</em>{0}\right)= & \
+= & \max <em>{\pi} \mathbb{E}\left[r\left(s</em>{0}, d_{0}\left(a_{0} \mid s_{0}\right)\right)+\gamma r\left(s_{1}, d_{1}\left(a_{1} \mid s_{0}, s_{1}\right)\right)+\gamma^{2} r\left(s_{2}, d_{2}\left(a_{2} \mid s_{0}, s_{1}, s_{2}\right)\right)+\ldots\right] \
 =&\mathbb{E}\left[\sum_{t=0}^{\infty} \gamma^{t} r\left(s_{t}, a_{t}\right) \mid a_{t} \sim d_{t}\left(\cdot \mid h_{t}\right)\right]
 \end{align*}
 $$</p>
@@ -170,6 +171,9 @@ for any $s \in S, a \in A$ and $t \in \mathbb{N}^{+}$</strong>
 <h2 id=simplifying-the-value-function>Simplifying the value function</h2>
 <h2 id=from-stochastic-to-deterministic-decision-rules>From stochastic to deterministic decision rules</h2>
 <p>Conclusion: we can now focus on stationary policies with deterministic markov decision rules.</p>
+<h1 id=solving-finite-horizon-mdps>Solving Finite-Horizon MDPs</h1>
+<h1 id=solving-infinite-horizon-undiscounted-mdps>Solving Infinite-Horizon Undiscounted MDPs</h1>
+<h1 id=summary>Summary</h1>
 <h2 id=example>Example</h2>
 <p>Let&rsquo;s apply the notions to a simple example. Let&rsquo;s consider the following model :</p>
 <img src=images/example_mdp1.png alt="Example of a markov decision process" class=center>
@@ -233,6 +237,8 @@ Improve this page
 </li>
 <li><a href=#simplifying-the-value-function>Simplifying the value function</a></li>
 <li><a href=#from-stochastic-to-deterministic-decision-rules>From stochastic to deterministic decision rules</a></li>
+</ul>
+<ul>
 <li><a href=#example>Example</a></li>
 </ul>
 </nav>
