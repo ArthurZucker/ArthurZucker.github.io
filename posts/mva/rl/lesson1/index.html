@@ -102,6 +102,7 @@ Arthur Zucker's Portfolio</a>
 </li>
 </ul>
 </li>
+<li><a href=/posts/backward/ title="Backward propagation">Backward propagation</a></li>
 </div>
 </ul>
 </div>
@@ -213,13 +214,13 @@ Arthur Zucker's Portfolio</a>
 <div style=padding-left:30px>
 🎲 The <g>Finite time horizon T</g> policy, sets a deadline $T$, at which the sum of the rewards up to $T$ will be computed. The value function can be expressed as :
 <p>$$ V^\pi(t,s) = \mathbb{E}\left[ \sum_{\tau = t}^{T-1} r(s_\tau,d_\tau(h_\tau)) + R(s_T) \mid s_t = s; \pi = (d_1, d_2, &mldr;,) \right ]$$</p>
-<p>Here, where $R$ is a value function for the final state. Here we compute the expectation of the sum of the rewards obtained taking actions according to the policy, and receiving the corresponding rewards. We have to take into account the Expectation because the decision process can be stochastic, and thus the Expectation gives the equivalent of the mean rewards in a stochastic model.<br>
+<p>Here, where $R$ is a value function for the final state. Here we compute the expectation of the sum of the rewards obtained taking actions according to the policy, and receiving the corresponding rewards. We have to take into account the Expectation because the decision process can be stochastic, and thus the Expectation gives the equivalent of the mean rewards in a stochastic model. <br>
 $\qquad$📝 It is usually used when there is a deadline to meet.</p>
 </div>
 <div style=padding-left:30px>
 🎲 The <g> Infinite Time Horizon with discount </g> translates a problem that never terminates. Rewards closer in time receive a higher importance :
 <p>$$ V^{\pi}\left(s\right)\ =\ \mathbb{E}\left[\sum_{t=0}^{\infty}\gamma^tr\left(s_t,d_t\left(h_t\right)\right)\ \mid s_{0\ }=s;\pi \right] $$</p>
-<p>where $0\leq\gamma&lt;1$ is the <em>discount</em> factor.<br>
+<p>where $0\leq\gamma&lt;1$ is the <em>discount</em> factor. <br>
 $\qquad$📝 We implement it when there is uncertainty about the deadline, or intrinsic definition of discount</p>
 </div>
 <div style=padding-left:30px>
